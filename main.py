@@ -1062,11 +1062,262 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        #racheLesson()
+        racheLesson()
 
     def preLesson():
         window.destroy()
         packLesson()
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack()
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+# Radiobutton, Checkbutton
+def racheLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Radiobutton, Checkbutton')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/racheLesson/1.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+
+    Label(win, text='Radiobutton, Checkbutton. \nЗмінні Tkinter', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, text='Radiobutton - радіокнопка', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/racheLesson/2.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=16, text="""
+from tkinter import *
+
+root = Tk()
+
+r1 = Radiobutton(text="First") 
+r2 = Radiobutton(text="Second")
+
+r1.pack(anchor=W) 
+r2.pack(anchor=W)
+
+root.mainloop()
+                                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    image1 = ImageTk.PhotoImage(file='images/radiobutton/1.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1
+    Label(win, text='Radiobutton - радіокнопка', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/racheLesson/3.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=9, text="""
+...
+r_var = BooleanVar()
+r_var.set(0)
+
+r1 = Radiobutton(text="First", variable=r_var, value=0)
+r2 = Radiobutton(text="Second", variable=r_var, value=1)
+...
+                                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    f = open("texts/racheLesson/4.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=34, text="""
+from tkinter import *
+
+
+# Функція зміни кольору
+def change():
+    if r_var.get() == 0:
+        label['bg'] = "lightblue"
+    elif r_var.get() == 1:
+        label['bg'] = "lightgreen"
+    elif r_var.get() == 2:
+        label['bg'] = "pink"
+
+
+root = Tk()
+
+r_var = IntVar()
+r_var.set(0)
+
+r1 = Radiobutton(text="Blue", variable=r_var, value=0)
+r2 = Radiobutton(text="Green", variable=r_var, value=1)
+r3 = Radiobutton(text="Pink", variable=r_var, value=2)
+
+
+r1.pack(anchor=W)   
+r2.pack(anchor=W)
+r3.pack(anchor=W)
+
+button = Button(text="Змінити", command=change)
+button.pack(pady=10)
+
+label = Label(width=20, height=10)
+label.pack()
+
+root.mainloop()
+                            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+
+    def example():
+
+        # Функція зміни кольору
+        def change():
+            if r_var.get() == 0:
+                label['bg'] = "lightblue"
+            elif r_var.get() == 1:
+                label['bg'] = "lightgreen"
+            elif r_var.get() == 2:
+                label['bg'] = "pink"
+
+        app = Tk()
+
+        r_var = IntVar(app)
+        r_var.set(0)
+
+        r1 = Radiobutton(app, text="Blue", variable=r_var, value=0)
+        r2 = Radiobutton(app, text="Green", variable=r_var, value=1)
+        r3 = Radiobutton(app, text="Pink", variable=r_var, value=2)
+
+        r1.pack(anchor=W)  # "Прибиваємо" їх на південь, тобто вниз для нормального вигляду
+        r2.pack(anchor=W)
+        r3.pack(anchor=W)
+
+        button = Button(app, text="Змінити", command=change)
+        button.pack(pady=10)
+
+        label = Label(app, width=20, height=10)
+        label.pack()
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити програму", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/racheLesson/5.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, text='Checkbutton - прапорець', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/racheLesson/6.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=18, text="""
+from tkinter import *
+
+root = Tk()
+
+cb_var1 = BooleanVar()
+cb_var1.set(0)
+cb1 = Checkbutton(text="First", variable=cb_var1, 
+                    onvalue=1, offvalue=0)
+cb_var2 = BooleanVar()
+cb_var2.set(0)
+cb2 = Checkbutton(text="Second", variable=cb_var2, 
+                    onvalue=1, offvalue=0)
+
+cb1.pack()
+cb2.pack()
+
+root.mainloop()
+                                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    frame = Frame(win)
+    image1 = ImageTk.PhotoImage(file='images/radiobutton/2.gif')
+    image2 = ImageTk.PhotoImage(file='images/radiobutton/3.gif')
+    image3 = ImageTk.PhotoImage(file='images/radiobutton/4.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage2 = Label(frame, image=image2)
+    labelImage2.image = image2
+    labelImage3 = Label(frame, image=image3)
+    labelImage3.image = image3
+    labelImage1.pack(side=LEFT, pady=10)
+    labelImage2.pack(side=LEFT, pady=10, padx=20)
+    labelImage3.pack(side=LEFT, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1, image2, labelImage2, image3, labelImage3
+    f = open("texts/racheLesson/7.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/racheLesson/8.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+
+    def example():
+        def change():
+            if r_var.get() == 1:
+                label['text'] = "+38 (093) 25-1423-99"
+            elif r_var.get() == 2:
+                label['text'] = "+38 (097) 14-1635-24"
+            elif r_var.get() == 3:
+                label['text'] = "+38 (068) 21-3546-45"
+
+        app = Tk()
+
+        frame = Frame(app)
+
+        r_var = IntVar(app)
+        r_var.set(0)
+
+        rb1 = Radiobutton(frame, text="Василь", indicatoron=0, variable=r_var, value=1, command=change, width=10)
+        rb2 = Radiobutton(frame, text="Петро", indicatoron=0, variable=r_var, value=2, command=change, width=10)
+        rb3 = Radiobutton(frame, text="Іван", indicatoron=0, variable=r_var, value=3, command=change, width=10)
+
+        label = Label(app, width=30, height=8)
+
+        frame.pack(side=LEFT)
+        rb1.pack()
+        rb2.pack()
+        rb3.pack()
+        label.pack(side=LEFT)
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+
+    def nextLesson():
+        window.destroy()
+        # listboxLesson()
+
+    def preLesson():
+        window.destroy()
+        textLesson()
+
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
     Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
@@ -1101,7 +1352,7 @@ button4 = Button(frame, width=300, height=30, text=" Text - велике тек�
 button4.pack(padx=140)
 
 button5 = Button(frame, width=300, height=30, text=" Radiobutton, Checkbutton", compound='left', image=buttonImage,
-                 anchor=W, font=butFont)
+                 anchor=W, font=butFont, command=racheLesson)
 button5.pack(padx=140, pady=10)
 
 button6 = Button(frame, width=300, height=30, text=" віджет Listbox()", compound='left', image=buttonImage,
