@@ -3006,7 +3006,7 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        #gridLesson()
+        gridLesson()
 
     def preLesson():
         window.destroy()
@@ -3023,7 +3023,7 @@ root.mainloop()
 def gridLesson():
     global w, h, codeFont
     window = Toplevel(root)
-    window.geometry("600x820+{}+{}".format(w, h))
+    window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('метод grid()')
     window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
@@ -3146,7 +3146,7 @@ Button(root, text="Відміна").grid(row=2, column=3,
 
 root.mainloop()
             """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    image = ImageTk.PhotoImage(file="images/grid/3.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/grid/3.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack(pady=10)
@@ -3167,11 +3167,172 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        #messageBoxLesson()
+        messageBoxLesson()
 
     def preLesson():
         window.destroy()
         windowLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def messageBoxLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Вікна діалогу')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/messageBoxLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Діалогові вікна', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Модуль messagebox - стандартні діалогові вікна', font=('Trebuchet MS', 18, "bold")).pack(pady=10)
+    Label(win, text="Вікно вибору 'так' або 'ні' - askyesno()", font=('Trebuchet MS', 12), justify=LEFT).pack(pady=10)
+    Label(win, height=25, text="""
+from tkinter import *
+from tkinter import messagebox as mb
+
+root = Tk()
+
+
+def check():
+    answer = mb.askyesno(title="Дайте відповідь", 
+                    message="Перенести данні?")
+    if answer == True:
+        s = entry.get()
+        entry.delete(0, END)
+        label.configure(text=s)
+
+
+entry = Entry(root)
+entry.pack()
+button = Button(root, text="Передати",
+                        command=check)
+button.pack()
+label = Label()
+label.pack()
+
+root.mainloop()
+                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/messageBox/1.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/messageBox/2.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/messageBox/3.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/messageBoxLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='mb.showerror("Помилка", "Введіть число!")', font=('Trebuchet MS', 12), justify=LEFT).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/messageBox/4.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text='mb.showinfo("Помилка", "Введіть число!")', font=('Trebuchet MS', 12), justify=LEFT).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/messageBox/5.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text='mb.showwarning("Помилка", "Введіть число!")', font=('Trebuchet MS', 12), justify=LEFT).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/messageBox/6.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text='Модуль filedialog - діалогові вікна відкриття \nта збереження файлів',
+          font=('Trebuchet MS', 18, "bold")).pack(pady=10)
+    f = open("texts/messageBoxLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=33, text="""
+from tkinter import *
+from tkinter import filedialog as fd
+
+root = Tk()
+
+
+def openFile():
+    file_name = fd.askopenfilename()
+    f = open(file_name, encoding="utf-8")
+    s = f.read()
+    text.insert(1.0, s)
+    f.close()
+
+def saveFile():
+    file_name = fd.asksaveasfilename(
+            filetypes=(("TXT files", "*.txt"),
+            ("HTML files", "*.html;*.htm"),
+            ("All files", "*.*") ))
+    f = open(file_name, 'w', encoding="utf-8")
+    s = text.get(1.0, END)
+    f.write(s)
+    f.close()
+
+
+text = Text(root, width=45, height=25)
+text.grid(columnspan=2)
+Button(root, text="Відкрити", command=openFile
+                    ).grid(row=1, sticky=E)
+Button(root, text="Зберегти", command=saveFile
+                ).grid(row=1, column=1, sticky=W)
+
+root.mainloop()
+            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/messageBox/7.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/messageBoxLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/messageBoxLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+
+    def nextLesson():
+        window.destroy()
+        #menuLesson()
+
+    def preLesson():
+        window.destroy()
+        gridLesson()
 
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
@@ -3239,7 +3400,7 @@ button12 = Button(frame, width=300, height=30, text=" метод grid()", compou
 button12.pack(padx=140)
 
 button13 = Button(frame, width=300, height=30, text=" Діалогові вікна", compound='left', image=buttonImage,
-                  anchor=W, font=butFont)
+                  anchor=W, font=butFont, command=messageBoxLesson)
 button13.pack(padx=140, pady=10)
 
 button14 = Button(frame, width=300, height=30, text=" Віджет Menu()", compound='left', image=buttonImage,
