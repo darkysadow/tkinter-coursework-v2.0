@@ -1,6 +1,7 @@
 from tkinter import *
 from VSF import VerticalScrolledFrame
 from PIL import ImageTk, Image
+import random as r
 
 root = Tk()
 
@@ -3555,7 +3556,7 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        #placeLesson()
+        placeLesson()
 
     def preLesson():
         window.destroy()
@@ -3564,6 +3565,163 @@ root.mainloop()
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
     Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+image15 = Image.open('C:/python-learn/tkinter-coursework-2/image.gif')
+new_image = image15.resize((50, 50))
+image15 = ImageTk.PhotoImage(new_image)
+
+def placeLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('place()')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/placeLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Метод place()', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/place/1.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/placeLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=13, text="""
+from tkinter import *
+
+root = Tk()
+root.geometry('150x150')
+
+# Задаємо постійні координати, в яких буде кнопка
+Button(bg='red').place(x=75, y=20) 
+
+# Задаємо координати відносно ширини та висоти вікна
+Button(bg='green').place(relx=0.3, rely=0.5)
+
+root.mainloop()
+    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/place/2.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text='Розтягуємо вікно, і бачимо, як другий віджет залежить від розмірів',
+          font=('Trebuchet MS', 12), justify=LEFT).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/place/3.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/placeLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=7, text="""
+...
+Label(bg="lightgreen").place(x=10, y=10, 
+                    width=100, height=30)
+Label(bg="lightblue").place(x=10, y=50, 
+            relwidth=0.3, relheight=0.15)
+...
+        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/place/4.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text='Розтягуємо вікно, і бачимо, як другий віджет залежить від розмірів',
+          font=('Trebuchet MS', 12), justify=LEFT).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/place/5.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/placeLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/placeLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=14, text="""
+...
+image = Image.open("назва файлу")
+# Змінюємо розміри зображення
+new_image = image.resize((нова ширина зображення,
+                        нова довжина зображення))
+# Відкриваємо редаговане зображення через PhotoImage
+image = ImageTk.PhotoImage(new_image)
+
+# Розміщуємо зображення на мітці
+labelImage = Label(root, image=image)
+labelImage.image = image
+labelImage.pack()
+...
+            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    f = open("texts/placeLesson/6.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+
+    def example():
+        global image15
+        app = Toplevel()
+        app.title("Приклад")
+        app.grab_set()
+        app.focus_set()
+        app.geometry("500x500")
+
+        def placeIn():
+            s = app.geometry()
+            s = s.split('+')
+            s = s[0].split('x')
+            width_w = int(s[0]) - 50
+            height_h = int(s[1]) - 50
+            x = r.randint(0, width_w)
+            y = r.randint(0, height_h)
+            but.place(x=int(x), y=int(y))
+
+        but = Button(app, image=image15, command=placeIn)
+        but.image = image15
+        but.place(x=200, y=200)
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+
+    def preLesson():
+        window.destroy()
+        menuLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
     frame.pack(pady=20)
     del frame
     win.pack(fill=BOTH, expand=True)
@@ -3635,7 +3793,7 @@ button14 = Button(frame, width=300, height=30, text=" Віджет Menu()", comp
 button14.pack(padx=140)
 
 button15 = Button(frame, width=300, height=30, text=" метод place()", compound='left', image=buttonImage, anchor=W
-                  , font=butFont)
+                  , font=butFont, command=placeLesson)
 button15.pack(padx=140, pady=10)
 
 
