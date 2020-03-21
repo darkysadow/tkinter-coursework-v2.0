@@ -410,12 +410,379 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        # packLesson()
+        packLesson()
 
     def preLesson():
         window.destroy()
         whatistkinter()
 
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack()
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def packLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('метод pack()')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/packLesson/1.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+
+    Label(win, text='Метод pack()', font=('Trebuchet MS', 22, "bold"), anchor=N).pack(pady=20)
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=6, text="""
+...
+l1 = Label(width=7, height=4, bg='yellow', text="1")
+l2 = Label(width=7, height=4, bg='orange', text="2")
+l3 = Label(width=7, height=4, bg='lightgreen', text="3")
+l4 = Label(width=7, height=4, bg='lightblue', text="4")
+...
+            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='l1.pack()\nl2.pack()\nl3.pack()\nl4.pack()', font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/1.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    frame = Frame(win)
+    Label(frame, text='l1.pack(side=BOTTOM)\nl2.pack(side=BOTTOM)\nl3.pack(side=BOTTOM)\nl4.pack(side=BOTTOM)',
+          font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/2.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    frame = Frame(win)
+    Label(frame, text='l1.pack(side=LEFT)\nl2.pack(side=LEFT)\nl3.pack(side=LEFT)\nl4.pack(side=LEFT)',
+          font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/3.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    frame = Frame(win)
+    Label(frame, text='l1.pack(side=RIGHT)\nl2.pack(side=RIGHT)\nl3.pack(side=RIGHT)\nl4.pack(side=RIGHT)',
+          font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/4.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    frame = Frame(win)
+    Label(frame, text='l1.pack(side=TOP)\nl2.pack(side=BOTTOM)\nl3.pack(side=RIGHT)\nl4.pack(side=LEFT)',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/5.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    f = open("texts/packLesson/2.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=24, text="""
+from tkinter import *
+
+root = Tk()
+root.title('pack()')
+frame_top = Frame(root) 
+frame_bottom = Frame(root) 
+
+l1 = Label(frame_top, width=10, height=5, 
+            bg="orange", text="1")
+l2 = Label(frame_top, width=10, height=5, 
+            bg="yellow", text="2")
+l3 = Label(frame_bottom, width=10, height=5, 
+            bg="lightblue", text="3")
+l4 = Label(frame_bottom, width=10, height=5, 
+            bg="lightgreen", text="4")
+
+frame_top.pack()
+frame_bottom.pack()
+l1.pack(side=LEFT)
+l2.pack(side=LEFT)
+l3.pack(side=LEFT)
+l4.pack(side=LEFT)
+
+root.mainloop()
+                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Результат: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/6.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    f = open("texts/packLesson/3.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=24, text="""
+from tkinter import *
+
+root = Tk()
+frame_top = LabelFrame(text='Верх')
+frame_bottom = LabelFrame(text='Низ')
+
+l1 = Label(frame_top, width=7, height=4, 
+                bg='yellow', text="1")
+l2 = Label(frame_top, width=7, height=4, 
+                bg='orange', text="2")
+l3 = Label(frame_bottom, width=7, height=4, 
+                bg='lightgreen', text="3")
+l4 = Label(frame_bottom, width=7, height=4, 
+                bg='lightblue', text="4")
+
+frame_top.pack()
+frame_bottom.pack()
+l1.pack(side=LEFT)
+l2.pack(side=LEFT)
+l3.pack(side=LEFT)
+l4.pack(side=LEFT)
+
+root.mainloop()
+                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Результат: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/7.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    f = open("texts/packLesson/4.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    frame = Frame(win)
+    Label(frame, text='frame.pack(padx=10, pady=10)\nlabel1.pack(side=LEFT)\nlabel2.pack(side=LEFT)',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/8.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    frame = Frame(win)
+    Label(frame, text='frame.pack(ipadx=10, ipady=10)\nlabel1.pack(side=LEFT)\nlabel2.pack(side=LEFT)',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/9.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    f = open("texts/packLesson/5.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    frame = Frame(win)
+    Label(frame, text='frame.pack(side=LEFT, \n         padx=10, pady=10)\nlabel1.pack()\nlabel2.pack()',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
+    image1 = ImageTk.PhotoImage(file='images/pack/10.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=LEFT, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    f = open("texts/packLesson/6.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=10, text="""
+from tkinter import *
+
+root = Tk()
+root.geometry("500x300") 
+
+label = Label(width=40, height=10, 
+        bg="lightblue", text="Звичайна мітка")
+label.pack()
+
+root.mainloop()
+                        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    f = open("texts/packLesson/7.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    frame = Frame(win)
+    Label(frame, text='Результат: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image1 = ImageTk.PhotoImage(file='images/pack/11.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del image1, labelImage1, frame
+    f = open("texts/packLesson/8.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=3, text="""
+...
+label.pack(expand=1)
+...
+                            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Результат: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image1 = ImageTk.PhotoImage(file='images/pack/12.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1
+    f = open("texts/packLesson/9.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=3, text="""
+...
+label.pack(expand=1, fill=Y)
+...
+                                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Результат: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image1 = ImageTk.PhotoImage(file='images/pack/13.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1
+    f = open("texts/packLesson/10.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=3, text="""
+...
+label.pack(expand=1, anchor=SE)
+...
+                                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Результат: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image1 = ImageTk.PhotoImage(file='images/pack/14.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1
+
+    f = open('texts/packLesson/11.txt', 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+
+    Label(win, text='Практичне завдання', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+
+    def example():
+        app = Tk()
+        app.title('Практика')
+        label = Label(app)
+        entry = Entry(app, width=20)
+        frame = Frame(app)
+
+        # Команди введення для кожного кольору
+        def redInsert():
+            entry.delete(0, END)  # в методі .delete(), аргументи 0 та END - Початковий та кінцевий символ
+            # з яких по який треба стерти
+            entry.insert(0, "#ff0000")
+            label['text'] = 'Червоний'
+
+        def orangeInsert():
+            entry.delete(0, END)
+            entry.insert(0, "#ff7d00")
+            label['text'] = 'Помаранчевий'
+
+        def yellowInsert():
+            entry.delete(0, END)
+            entry.insert(0, "#ffff00")
+            label['text'] = 'Жовтий'
+
+        def greenInsert():
+            entry.delete(0, END)
+            entry.insert(0, "#00ff00")
+            label['text'] = 'Зелений'
+
+        def cyanInsert():
+            entry.delete(0, END)
+            entry.insert(0, "#007dff")
+            label['text'] = 'Голубий'
+
+        def blueInsert():
+            entry.delete(0, END)
+            entry.insert(0, "#0000ff")
+            label['text'] = 'Синій'
+
+        def purpleInsert():
+            entry.delete(0, END)
+            entry.insert(0, "#7d00ff")
+            label['text'] = 'Фіолетовий'
+
+        redButton = Button(frame, bg='#ff0000', width=5, command=redInsert)
+        orangeButton = Button(frame, bg='#ff7d00', width=5, command=orangeInsert)
+        yellowButton = Button(frame, bg='#ffff00', width=5, command=yellowInsert)
+        greenButton = Button(frame, bg='#00ff00', width=5, command=greenInsert)
+        cyanButton = Button(frame, bg='#007dff', width=5, command=cyanInsert)
+        blueButton = Button(frame, bg='#0000ff', width=5, command=blueInsert)
+        purpleButton = Button(frame, bg='#7d00ff', width=5, command=purpleInsert)
+        label.pack(pady=10)
+        entry.pack()
+        frame.pack(pady=10, padx=10)
+        redButton.pack(side=LEFT)
+        orangeButton.pack(side=LEFT)
+        yellowButton.pack(side=LEFT)
+        greenButton.pack(side=LEFT)
+        cyanButton.pack(side=LEFT)
+        blueButton.pack(side=LEFT)
+        purpleButton.pack(side=LEFT)
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    def nextLesson():
+        window.destroy()
+        #textLesson()
+
+    def preLesson():
+        window.destroy()
+        bleLesson()
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
     Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
