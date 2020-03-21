@@ -1677,11 +1677,530 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        # eventLesson()
+        eventLesson()
 
     def preLesson():
         window.destroy()
         listboxLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def eventLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Події tkinter')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/eventLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Події', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    frame = Frame(win)
+    Label(frame, text='Типи подій', font=('Trebuchet MS', 18, "bold"),
+          anchor=N).pack(pady=20)
+    image = ImageTk.PhotoImage(file="images/event/2.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    image = ImageTk.PhotoImage(file="images/event/3.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    image = ImageTk.PhotoImage(file="images/event/4.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    frame.pack()
+    Label(win, text='При виклику методу bind () подія передається через перший аргумент.',
+          font=('Trebuchet MS', 12), justify=LEFT).pack()
+    image = ImageTk.PhotoImage(file="images/event/1.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/eventLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=27, text="""
+from tkinter import *
+
+
+def rightClick(event):
+    root.title('ПКМ')
+
+
+def leftClick(event):
+    root.title('ЛКМ')
+
+
+def mouseMove(event):
+    x = event.x
+    y = event.y
+    s = "Mouse moving on {}:{}".format(x, y)
+    root.title(s)
+
+
+root = Tk()
+root.geometry("320x150")
+
+root.bind('<Button-1>', leftClick)
+root.bind('<Button-3>', rightClick)
+root.bind('<Motion>', mouseMove)
+
+root.mainloop()
+     """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        def rightClick(event):
+            app.title('ПКМ')
+
+        def leftClick(event):
+            app.title('ЛКМ')
+
+        def mouseMove(event):
+            x = event.x
+            y = event.y
+            s = "Mouse moving on {}:{}".format(x, y)
+            app.title(s)
+
+        app = Tk()
+        app.geometry("320x150")
+
+        app.bind('<Button-1>', leftClick)
+        app.bind('<Button-3>', rightClick)
+        app.bind('<Motion>', mouseMove)
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/eventLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=53, text="""
+from tkinter import *
+
+
+def selectAll(event):
+    # без цього виділення не відбудеться
+    root.after(10, select_all, event.widget)
+    # метод .after() виконує функцію, яка вказана 
+    # в другому аргументі, через проміжок часу 
+    # вказаному в першому аргументі. В третьому 
+    # значенні передаєтсья значеня атрибута 
+    # widget об'єкта event, тобто поле entry. 
+    # Саме воно буде передано в функцію 
+    # select_all() як параметр widget
+
+# Виділення тексту
+def select_all(widget):
+    # Діапазон виділення
+    widget.selection_range(0, END)
+    # курсор в кінець
+    widget.icursor(END)
+
+
+# Вставка тексту з поля в мітку
+def copyPaste(event):
+    t = entry.get()
+    # Конфігуруємо мітку label
+    label.configure(text=t)
+
+
+def exitWindow(event):
+    # "Знищуємо" вікно
+    root.destroy()
+
+
+root = Tk()
+
+entry = Entry(width=25, font="Comic")
+# Ctrl + A - вибираємо весь текст в полі
+entry.bind('<Control-a>', selectAll)
+# Enter - вставляємо виділений текст в мітку
+entry.bind('<Return>', copyPaste)
+entry.pack(pady=10)
+
+
+label = Label(height=4, font=("Verdana", 20, 
+            'bold'), bg="lightgreen", fg="grey")
+label.pack(fill=X)
+
+# Вихід з програми
+root.bind('<Control-q>', exitWindow)
+
+root.mainloop()
+         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        def selectAll(event):
+            app.after(10, select_all, event.widget)  # без цього виділення не відбудеться
+            # метод .after() виконує функцію, яка вказана в другому аргументі, через проміжок часу
+            # вказаному в першому аргументі. В третьому значенні передаєтсья значеня атрибута
+            # widget об'єкта event, тобто поле entry. Саме воно буде передано в функцію select_all()
+            # як параметр widget
+
+        def select_all(widget):  # Виділення тексту
+            widget.selection_range(0, END)  # Діапазон виділення
+            widget.icursor(END)  # курсор в кінець
+
+        def copyPaste(event):  # Вставка тексту з поля в мітку
+            t = entry.get()
+            label.configure(text=t)  # Конфігуруємо мітку label
+
+        def exitWindow(event):
+            app.destroy()  # "Знищуємо" вікно
+
+        app = Tk()
+
+        entry = Entry(app, width=25, font="Comic")
+        entry.bind('<Control-a>', selectAll)  # Ctrl + A - вибираємо весь текст в полі
+        entry.bind('<Return>', copyPaste)  # Enter - вставляємо виділений текст в мітку
+        entry.pack(pady=10)
+
+        label = Label(app, height=4, font=("Verdana", 20, 'bold'), bg="lightgreen", fg="grey")
+        label.pack(fill=X)
+
+        app.bind('<Control-q>', exitWindow)  # Вихід з програми
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/eventLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/eventLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+
+    def example():
+        app = Tk()
+
+        en1 = Entry(app, width=5)
+        en2 = Entry(app, width=5)
+        en1.pack(side=TOP)
+        en2.pack(side=TOP)
+
+        button = Button(app, text="Змінити")
+        button.bind('<Button-1>', lambda event: text.configure(width=en1.get(), height=en2.get()))
+        button.pack(pady=10)
+
+        text = Text(app, width=15, height=8, bg="lightgrey")
+        text.bind('<FocusIn>', lambda x: text.configure(bg='white'))  # Подія, яка відбудеться коли text у фокусі
+        text.bind('<FocusOut>', lambda x: text.configure(bg="lightgrey"))  # Подія, коли text не у фокусі
+        text.pack()
+
+        app.bind('<Return>', lambda event: text.configure(width=en1.get(), height=en2.get()))
+        app.bind('<Escape>', lambda x: app.destroy())
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+
+    def nextLesson():
+        window.destroy()
+        canvasLesson()
+
+    def preLesson():
+        window.destroy()
+        bindLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def canvasLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Canvas')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/canvasLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Canvas', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    image = ImageTk.PhotoImage(file="images/canvas/1.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    f = open("texts/canvasLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=33, text="""
+from tkinter import *
+
+root = Tk()
+
+canvas = Canvas(root, width=800, 
+            height=600, bg='lightgreen')
+canvas.pack()
+
+# create_line() - створює лінію у канвасі
+canvas.create_line(100, 50, 700, 50)
+
+# приймає першими двома аргументами х1 та у1, 
+# координата початок лінії наступні 2 аргументи
+# це х2 та у2, координата в якій лінія закінчиться
+
+canvas.create_line(397, 150, 397, 500, width=6, 
+                fill="purple", dash=(2, 1), 
+                arrow=FIRST, arrowshape='20 80 200', 
+                activefill="silver")
+
+# Аргумент fill у методі create_line() виступає 
+# "заливкою" лінії кольором. Аргумент 
+# dash(перший арг., другий арг.), робить лінію 
+# преривчастою. Першим аргументом в dash() задається 
+# довжина відрізка, другим довжина пробілу
+# Аргумент arrow малює стрілку, приймає значення 
+# FIRST (Початок лінії) та LAST (Кінець лінії)
+# Аргумент arrowshape визначає розміри стрілки.
+# Аргумент activefill - задає колір лінії при 
+# наведенні курсора миші
+
+root.mainloop()
+             """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = Image.open("images/canvas/3.gif")
+    new_image = image.resize((540, 450))
+    image = ImageTk.PhotoImage(new_image)
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage, new_image
+    image = ImageTk.PhotoImage(file="images/canvas/2.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    f = open("texts/canvasLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=22, text="""
+...
+# Створимо чотирикутник за допомогою метода 
+# create_rectangle() перші 2 аргументи х1, у1, 
+# це точка початок рисування. (Верхній лівий 
+# куток прямокутника). наступні 2 аргументи:
+# х2, у2, це точка кінець рисування (Нижній 
+# правий куток прямокутника)
+
+canvas.create_rectangle(100, 50, 500, 150)
+
+# Створимо такий самий за розмірами чотирикутник,
+# тільки надамо йому додаткові аргументи
+canvas.create_rectangle(100, 200, 500, 300, 
+                fill="lightgreen", outline='green',
+                width=4, activedash=(4, 2))
+# outline - колір лінії-межі чотирикутника
+# width - товщина лінії-межі чотирикутника
+# activedash - те ж саме, що й dash(), але 
+# використовується для межі, при наведенні курсору
+# на чотирикутник
+...
+                 """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    image = Image.open("images/canvas/4.gif")
+    new_image = image.resize((540, 450))
+    image = ImageTk.PhotoImage(new_image)
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage, new_image
+    Label(frame, text='Курсор на прямокутнику:', font=('Trebuchet MS', 16), justify=LEFT).pack()
+    image = Image.open("images/canvas/5.gif")
+    new_image = image.resize((540, 450))
+    image = ImageTk.PhotoImage(new_image)
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage, new_image
+    frame.pack()
+    Label(win, text="\nМетодом create_polygon () малюється довільний багатокутник \n"
+                    + "шляхом завдання координат кожної його точки:\n",
+          font=('Trebuchet MS', 12), justify=LEFT).pack()
+    Label(win, height=22, text="""
+...
+# Створимо шестикутник
+canvas.create_polygon((250, 100), (350, 100),
+                      (400, 150), (350, 200),
+                      (250, 200), (200, 150))
+# Координати точок повинні бути задані за 
+# часовою стрілкою!!!
+# Для зручності кожну точку візьмемо в ()
+
+# Створимо восьмикутник
+canvas.create_polygon((250, 250), (350, 250),
+                      (400, 300), (400, 350),
+                      (350, 400), (250, 400),
+                      (200, 350), (200, 300),
+    fill="lightblue", outline="silver", width=5)
+
+# Створимо трапецію
+canvas.create_polygon((250, 450), (350, 450),
+                      (400, 550), (200, 550),
+        fill="orange", outline="yellow", width=5)
+...
+                     """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    Label(win, text='Результат виконання:', font=('Trebuchet MS', 16), justify=LEFT).pack(pady=10)
+    image = Image.open("images/canvas/6.gif")
+    new_image = image.resize((540, 650))
+    image = ImageTk.PhotoImage(new_image)
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage, new_image
+    f = open("texts/canvasLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=26, text="""
+...
+canvas.create_oval(50, 50, 350, 350)
+
+# Створимо сектор методом create_arc(), 
+# він приймає аргументи координати прямокутника
+# в якому розташовується еліпс, до якого цей 
+# метод застосовується
+# аргумент start означає градус початок сектору, 
+# extent - градус, скільки сектор буде займати
+
+canvas.create_arc(50, 50, 350, 350, start=90, 
+                    extent=45, fill="lightblue")
+canvas.create_arc(50, 50, 350, 350, start=10, 
+                    extent=45, fill="lightgreen")
+# Створимо дугу тим самим методом, але дамо 
+# більше аргументів
+# аргумент style може приймати значення: 
+# ARC - дуга, CHORD - сегмент
+canvas.create_arc(50, 50, 350, 350, start=55, 
+                    extent=35, style=ARC, 
+                    outline="orange", width=3)
+canvas.create_arc(50, 50, 350, 350, start=200, 
+                    extent=90, style=CHORD, 
+                    fill="#E74C3C")
+...
+                         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="images/canvas/7.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    image = ImageTk.PhotoImage(file="images/canvas/9.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text="\nНа полотні можна розмістити текст. Робиться це за допомогою \nметоду create_text ():\n",
+          font=('Trebuchet MS', 12), justify=LEFT).pack()
+    Label(win, height=10, text="""
+...
+canvas.create_text(200, 200, text="Вставка тексту\n" +
+        "на холст", font=("Comic Sans MS", 18, "bold"), 
+        justify=LEFT)
+
+canvas.create_text(300, 380, text="Правий куток знизу",
+                font=("Verdana", 10, "italic"), 
+                justify=RIGHT, fill="aqua")
+...
+                             """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="images/canvas/8.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/canvasLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    Label(win, text="Створіть на холсті подібне зразку зображення:", font=('Trebuchet MS', 12), justify=LEFT).pack()
+
+    def example():
+        app = Tk()
+        app.title("для трави виористовуй цикл")
+
+        canvas = Canvas(app, width=360, height=300)
+        canvas.create_oval(220, 10, 270, 60, fill="yellow", outline="orange", width=2)
+        canvas.create_polygon((20, 110), (120, 60), (220, 110), (200, 110), (200, 260), (40, 260), (40, 110),
+                              fill="lightblue", outline='blue')
+
+        i = -20
+
+        while i <= 380:
+            canvas.create_arc(i, 230, (i + 100), 380, start=200, extent=-90, style=ARC, outline="green", width=3)
+            i += 10
+
+        canvas.pack()
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+
+    def nextLesson():
+        window.destroy()
+        # idtagLesson()
+
+    def preLesson():
+        window.destroy()
+        eventLesson()
 
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
@@ -1729,11 +2248,11 @@ button7 = Button(frame, width=300, height=30, text=" метод bind()", compoun
 button7.pack(padx=140, pady=10)
 
 button8 = Button(frame, width=300, height=30, text=" Події", compound='left', image=buttonImage, anchor=W
-                 , font=butFont)
+                 , font=butFont, command=eventLesson)
 button8.pack(padx=140)
 
 button9 = Button(frame, width=300, height=30, text=" Canvas", compound='left', image=buttonImage, anchor=W,
-                 font=butFont)
+                 font=butFont, command=canvasLesson)
 button9.pack(padx=140, pady=10)
 
 button10 = Button(frame, width=300, height=30, text=" Canvas. Ідентифікатори та теги",
