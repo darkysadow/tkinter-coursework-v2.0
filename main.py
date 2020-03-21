@@ -3328,11 +3328,238 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        #menuLesson()
+        menuLesson()
 
     def preLesson():
         window.destroy()
         gridLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def menuLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Menu()')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/menuLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Віджет Menu()', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=9, text="""
+from tkinter import *
+
+root = Tk()
+
+mainmenu = Menu(root)
+root.config(menu=mainmenu)
+
+root.mainloop()
+        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    f = open("texts/menuLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=6, text="""
+...
+mainmenu.add_command(label="Файл")
+mainmenu.add_command(label="Довідка")
+...
+            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/menu/1.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/menuLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=25, text="""
+from tkinter import *
+
+root = Tk()
+
+mainmenu = Menu(root)
+
+root.config(menu=mainmenu)
+
+filemenu = Menu(mainmenu, tearoff=0)
+filemenu.add_command(label="Новий")
+filemenu.add_command(label="Відкрити...")
+filemenu.add_command(label="Зберегти...")
+filemenu.add_command(label="Вихід")
+
+helpmenu = Menu(mainmenu, tearoff=0)
+helpmenu.add_command(label="Допомога")
+helpmenu.add_command(label="Про програму")
+
+mainmenu.add_cascade(label="Файл", 
+                        menu=filemenu)
+mainmenu.add_cascade(label="Довідка", 
+                        menu=helpmenu)
+
+root.mainloop()
+                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="images/menu/2.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/menuLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=20, text="""
+...
+filemenu = Menu(mainmenu, tearoff=0)
+filemenu.add_command(label="Новий")
+filemenu.add_command(label="Відкрити...")
+filemenu.add_command(label="Зберегти...")
+filemenu.add_command(label="Вихід")
+
+helpmenu = Menu(mainmenu, tearoff=0)
+helpmenu.add_command(label="Про програму")
+
+helpmenu1 = Menu(helpmenu, tearoff=0)
+helpmenu1.add_command(label='Локальна довідка')
+helpmenu1.add_command(label='Довідка на сайті')
+
+helpmenu.add_cascade(label="Допомога", menu=helpmenu1)
+
+mainmenu.add_cascade(label="Файл", menu=filemenu)
+mainmenu.add_cascade(label="Довідка", menu=helpmenu)
+...
+    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/menu/3.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/menuLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=14, text="""
+...
+filemenu = Menu(mainmenu, tearoff=0)
+filemenu.add_command(label="Новий")
+
+filemenu.add_separator()
+
+filemenu.add_command(label="Відкрити...")
+filemenu.add_command(label="Зберегти...")
+
+filemenu.add_separator()
+
+filemenu.add_command(label="Вихід")    
+...
+    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/menu/4.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/menuLesson/6.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=44, text="""
+from tkinter import *
+
+root = Tk()
+
+canvas = Canvas(root, width=300, height=300, 
+                                bg="white")
+
+
+def drawOval():
+    canvas.create_oval(x, y, x+50, y+50)
+
+
+def drawRect():
+    canvas.create_rectangle(x, y, x+50, y+50)
+
+
+def drawTria():
+    canvas.create_polygon((x, y), (x+25, y-50), 
+        (x+50, y), fill='white', outline="black")
+
+
+canvas.pack()
+
+menu = Menu(root, tearoff=0)
+menu.add_command(label="Круг", command=drawOval)
+menu.add_command(label="Квадрат", command=drawRect)
+menu.add_command(label="Трикутник", 
+                            command=drawTria)
+
+x = 0
+y = 0
+
+
+def popup(event):
+    global x, y
+    x = event.x
+    y = event.y
+    menu.post(event.x_root, event.y_root)
+
+
+root.bind("<Button-3>", popup)
+
+root.mainloop()
+        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/menu/5.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/menuLesson/7.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/menuLesson/8.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/menu/6.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+
+    def nextLesson():
+        window.destroy()
+        #placeLesson()
+
+    def preLesson():
+        window.destroy()
+        messageBoxLesson()
 
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
@@ -3404,7 +3631,7 @@ button13 = Button(frame, width=300, height=30, text=" Діалогові вік�
 button13.pack(padx=140, pady=10)
 
 button14 = Button(frame, width=300, height=30, text=" Віджет Menu()", compound='left', image=buttonImage,
-                  anchor=W, font=butFont)
+                  anchor=W, font=butFont, command=menuLesson)
 button14.pack(padx=140)
 
 button15 = Button(frame, width=300, height=30, text=" метод place()", compound='left', image=buttonImage, anchor=W
