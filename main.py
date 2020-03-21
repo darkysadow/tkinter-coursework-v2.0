@@ -32,22 +32,22 @@ def whatistkinter():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/tkinter/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/tkinter/1.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
-    f = open("texts/tkinter/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/tkinter/2.txt", 'r', encoding="utf-8")
     text2 = f.read()
     f.close()
-    f = open("texts/tkinter/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/tkinter/3.txt", 'r', encoding="utf-8")
     text3 = f.read()
     f.close()
-    f = open("texts/tkinter/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/tkinter/4.txt", 'r', encoding="utf-8")
     text4 = f.read()
     f.close()
-    f = open("texts/tkinter/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/tkinter/5.txt", 'r', encoding="utf-8")
     text5 = f.read()
     f.close()
-    f = open("texts/tkinter/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/tkinter/6.txt", 'r', encoding="utf-8")
     text6 = f.read()
     f.close()
 
@@ -104,13 +104,13 @@ def bleLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/bleLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bleLesson/1.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
-    f = open("texts/bleLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bleLesson/2.txt", 'r', encoding="utf-8")
     text2 = f.read()
     f.close()
-    f = open("texts/bleLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bleLesson/3.txt", 'r', encoding="utf-8")
     text3 = f.read()
     f.close()
 
@@ -187,16 +187,16 @@ root.mainloop()
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
 
-    f = open('texts/bleLesson/4.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/4.txt', 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
-    f = open('texts/bleLesson/5.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/5.txt', 'r', encoding="utf-8")
     text2 = f.read()
     f.close()
-    f = open('texts/bleLesson/6.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/6.txt', 'r', encoding="utf-8")
     text3 = f.read()
     f.close()
-    f = open('texts/bleLesson/7.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/7.txt', 'r', encoding="utf-8")
     text4 = f.read()
     f.close()
 
@@ -289,13 +289,13 @@ root.mainloop()
     Label(win, text=text4, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1, text2, text3, text4
 
-    f = open('texts/bleLesson/8.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/8.txt', 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
-    f = open('texts/bleLesson/9.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/9.txt', 'r', encoding="utf-8")
     text2 = f.read()
     f.close()
-    f = open('texts/bleLesson/10.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/10.txt', 'r', encoding="utf-8")
     text3 = f.read()
     f.close()
 
@@ -344,7 +344,7 @@ root.mainloop()
 
     del text1, text2, text3
 
-    f = open('texts/bleLesson/11.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/bleLesson/11.txt', 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
 
@@ -438,7 +438,7 @@ def packLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/packLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/1.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
 
@@ -497,7 +497,7 @@ l4 = Label(width=7, height=4, bg='lightblue', text="4")
     labelImage1.pack(side=LEFT, pady=10)
     frame.pack()
     del image1, labelImage1, frame
-    f = open("texts/packLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/2.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -537,7 +537,7 @@ root.mainloop()
     labelImage1.pack(side=LEFT, pady=10)
     frame.pack()
     del image1, labelImage1, frame
-    f = open("texts/packLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/3.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -576,7 +576,7 @@ root.mainloop()
     labelImage1.pack(side=LEFT, pady=10)
     frame.pack()
     del image1, labelImage1, frame
-    f = open("texts/packLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/4.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -599,7 +599,7 @@ root.mainloop()
     labelImage1.pack(side=LEFT, pady=10)
     frame.pack()
     del image1, labelImage1, frame
-    f = open("texts/packLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/5.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -613,7 +613,7 @@ root.mainloop()
     labelImage1.pack(side=LEFT, pady=10)
     frame.pack()
     del image1, labelImage1, frame
-    f = open("texts/packLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/6.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -630,7 +630,7 @@ label.pack()
 
 root.mainloop()
                         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    f = open("texts/packLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/7.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -644,7 +644,7 @@ root.mainloop()
     labelImage1.pack(side=TOP, pady=10)
     frame.pack()
     del image1, labelImage1, frame
-    f = open("texts/packLesson/8.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/8.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -663,7 +663,7 @@ label.pack(expand=1)
     labelImage1.pack(side=TOP, pady=10)
     frame.pack()
     del frame, image1, labelImage1
-    f = open("texts/packLesson/9.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/9.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -682,7 +682,7 @@ label.pack(expand=1, fill=Y)
     labelImage1.pack(side=TOP, pady=10)
     frame.pack()
     del frame, image1, labelImage1
-    f = open("texts/packLesson/10.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/packLesson/10.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -703,7 +703,7 @@ label.pack(expand=1, anchor=SE)
     frame.pack()
     del frame, image1, labelImage1
 
-    f = open('texts/packLesson/11.txt', 'r', encoding="utf-8")
+    f = open('C:/python-learn/tkinter-coursework-2/texts/packLesson/11.txt', 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
 
@@ -805,7 +805,7 @@ def textLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/textLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/1.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
 
@@ -834,13 +834,13 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/textLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/2.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     Label(win, text='Text та Scrollbar', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/textLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/3.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -866,13 +866,13 @@ root.mainloop()
     labelImage1.pack(side=TOP, pady=10)
     frame.pack()
     del frame, image1, labelImage1
-    f = open("texts/textLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/4.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     Label(win, text='Методи Text', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/textLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/5.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -955,13 +955,13 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/textLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/6.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     Label(win, text='Теги', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/textLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/7.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -998,13 +998,13 @@ root.mainloop()
     labelImage1.pack(side=TOP, pady=10)
     frame.pack()
     del frame, image1, labelImage1
-    f = open("texts/textLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/7.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     Label(win, text='Вставка віджетів в текстове поле', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/textLesson/8.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/8.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1044,13 +1044,13 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/textLesson/9.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/9.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/textLesson/10.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/textLesson/10.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1090,7 +1090,7 @@ def racheLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/racheLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/1.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
 
@@ -1099,7 +1099,7 @@ def racheLesson():
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     Label(win, text='Radiobutton - радіокнопка', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/racheLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/2.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1125,7 +1125,7 @@ root.mainloop()
     frame.pack()
     del frame, image1, labelImage1
     Label(win, text='Radiobutton - радіокнопка', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/racheLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/3.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1140,7 +1140,7 @@ r2 = Radiobutton(text="Second", variable=r_var, value=1)
 ...
                                     """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
           font=codeFont).pack()
-    f = open("texts/racheLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/4.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1218,13 +1218,13 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити програму", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/racheLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/5.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     Label(win, text='Checkbutton - прапорець', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/racheLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/6.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1264,14 +1264,14 @@ root.mainloop()
     labelImage3.pack(side=LEFT, pady=10)
     frame.pack()
     del frame, image1, labelImage1, image2, labelImage2, image3, labelImage3
-    f = open("texts/racheLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/7.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
 
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/racheLesson/8.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/racheLesson/8.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1340,7 +1340,7 @@ def listboxLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/listboxLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/listboxLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -1383,7 +1383,7 @@ root.mainloop()
     del image, labelImage
     frame.pack()
     del frame
-    f = open("texts/listboxLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/listboxLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1475,13 +1475,13 @@ root.mainloop()
     del image, labelImage
     frame.pack()
     del frame
-    f = open("texts/listboxLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/listboxLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/listboxLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/listboxLesson/4.txt", 'r', encoding="utf-8")
     text1 = f.read()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1524,7 +1524,7 @@ def bindLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/bindLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bindLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -1549,7 +1549,7 @@ b.pack()
 root.mainloop()
                                         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
           font=codeFont).pack()
-    f = open("texts/bindLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bindLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1572,7 +1572,7 @@ RedButton()
 root.mainloop()
                                             """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
           font=codeFont).pack()
-    f = open("texts/bindLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bindLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1595,7 +1595,7 @@ l.pack()
 root.mainloop()
                                                 """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
           font=codeFont).pack()
-    f = open("texts/bindLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bindLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1607,7 +1607,7 @@ def changeFont(event, font):
 … 
                                                     """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
           font=codeFont).pack()
-    f = open("texts/bindLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bindLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1621,7 +1621,7 @@ l.bind('<Button-3>', lambda event,
 … 
                                                         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
           font=codeFont).pack()
-    f = open("texts/bindLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bindLesson/6.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1645,7 +1645,7 @@ root.mainloop()
           justify=LEFT,
           font=codeFont).pack()
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/bindLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/bindLesson/7.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1705,7 +1705,7 @@ def eventLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/eventLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/eventLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -1739,7 +1739,7 @@ def eventLesson():
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/eventLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/eventLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1798,7 +1798,7 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/eventLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/eventLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1894,13 +1894,13 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/eventLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/eventLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/eventLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/eventLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -1961,7 +1961,7 @@ def canvasLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/canvasLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/canvasLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -1974,7 +1974,7 @@ def canvasLesson():
     labelImage.image = image
     labelImage.pack()
     del image, labelImage
-    f = open("texts/canvasLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/canvasLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2025,7 +2025,7 @@ root.mainloop()
     labelImage.image = image
     labelImage.pack()
     del image, labelImage
-    f = open("texts/canvasLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/canvasLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2104,7 +2104,7 @@ canvas.create_polygon((250, 450), (350, 450),
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage, new_image
-    f = open("texts/canvasLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/canvasLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2164,7 +2164,7 @@ canvas.create_text(300, 380, text="Правий куток знизу",
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/canvasLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/canvasLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2224,7 +2224,7 @@ def idtagLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/idtagLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/idtagLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -2234,7 +2234,7 @@ def idtagLesson():
     del text
     Label(win, text='Ідентифікатори', font=('Trebuchet MS', 18, "bold"),
           anchor=N).pack(pady=10)
-    f = open("texts/idtagLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/idtagLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2281,7 +2281,7 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/idtagLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/idtagLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2352,7 +2352,7 @@ root.mainloop()
           font=('Trebuchet MS', 12), justify=LEFT).pack()
     Label(win, text='Теги', font=('Trebuchet MS', 18, "bold"),
           anchor=N).pack(pady=10)
-    f = open("texts/idtagLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/idtagLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2374,7 +2374,7 @@ c.bind("<Button-3>", lambda event:
 c.pack()
 ...
         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    f = open("texts/idtagLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/idtagLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2454,7 +2454,7 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити цей код", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/idtagLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/idtagLesson/6.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2477,7 +2477,7 @@ motion()
 
 root.mainloop()
                 """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    f = open("texts/idtagLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/idtagLesson/7.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2546,7 +2546,7 @@ def windowLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/windowLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -2556,7 +2556,7 @@ def windowLesson():
     del text
     Label(win, text='Розміри та розташування вікна', font=('Trebuchet MS', 18, "bold"),
           anchor=N).pack(pady=10)
-    f = open("texts/windowLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2570,7 +2570,7 @@ root.geometry('600x400+200+100')
 
 root.mainloop()
                     """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    f = open("texts/windowLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2669,7 +2669,7 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/windowLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2793,7 +2793,7 @@ root.mainloop()
     Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
-    f = open("texts/windowLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2810,7 +2810,7 @@ root.resizable(False, False)
     del image, labelImage
     Label(win, text='Заголовок вікна', font=('Trebuchet MS', 18, "bold"),
           anchor=N).pack(pady=10)
-    f = open("texts/windowLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/6.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2826,7 +2826,7 @@ root.resizable(False, False)
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/windowLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/7.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -2926,7 +2926,7 @@ root.mainloop()
            font=butFont, command=example).pack(pady=20, padx=140)
     del example
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/windowLesson/8.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/windowLesson/8.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3034,7 +3034,7 @@ def gridLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/gridLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/gridLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -3047,7 +3047,7 @@ def gridLesson():
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/gridLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/gridLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3057,7 +3057,7 @@ def gridLesson():
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/gridLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/gridLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3099,7 +3099,7 @@ Button(root, text="Відміна").grid(row=2,
 
 root.mainloop()
         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    f = open("texts/gridLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/gridLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3109,7 +3109,7 @@ root.mainloop()
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/gridLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/gridLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3152,7 +3152,7 @@ root.mainloop()
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/gridLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/gridLesson/6.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3195,7 +3195,7 @@ def messageBoxLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/messageBoxLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/messageBoxLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -3246,7 +3246,7 @@ root.mainloop()
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/messageBoxLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/messageBoxLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3271,7 +3271,7 @@ root.mainloop()
     del image, labelImage
     Label(win, text='Модуль filedialog - діалогові вікна відкриття \nта збереження файлів',
           font=('Trebuchet MS', 18, "bold")).pack(pady=10)
-    f = open("texts/messageBoxLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/messageBoxLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3315,13 +3315,13 @@ root.mainloop()
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/messageBoxLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/messageBoxLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/messageBoxLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/messageBoxLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3356,7 +3356,7 @@ def menuLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/menuLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -3374,7 +3374,7 @@ root.config(menu=mainmenu)
 
 root.mainloop()
         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    f = open("texts/menuLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3390,7 +3390,7 @@ mainmenu.add_command(label="Довідка")
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/menuLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3421,12 +3421,12 @@ mainmenu.add_cascade(label="Довідка",
 
 root.mainloop()
                 """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    image = ImageTk.PhotoImage(file="images/menu/2.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/menu/2.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/menuLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3457,7 +3457,7 @@ mainmenu.add_cascade(label="Довідка", menu=helpmenu)
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/menuLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3482,7 +3482,7 @@ filemenu.add_command(label="Вихід")
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/menuLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/6.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3537,13 +3537,13 @@ root.mainloop()
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/menuLesson/7.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/7.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/menuLesson/8.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/menuLesson/8.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3587,7 +3587,7 @@ def placeLesson():
     mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
     win = mainframe
 
-    f = open("texts/placeLesson/1.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/placeLesson/1.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
 
@@ -3600,7 +3600,7 @@ def placeLesson():
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/placeLesson/2.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/placeLesson/2.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3631,7 +3631,7 @@ root.mainloop()
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/placeLesson/3.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/placeLesson/3.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3656,13 +3656,13 @@ Label(bg="lightblue").place(x=10, y=50,
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    f = open("texts/placeLesson/4.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/placeLesson/4.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text
     Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
-    f = open("texts/placeLesson/5.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/placeLesson/5.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
@@ -3682,7 +3682,7 @@ labelImage.image = image
 labelImage.pack()
 ...
             """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    f = open("texts/placeLesson/6.txt", 'r', encoding="utf-8")
+    f = open("C:/python-learn/tkinter-coursework-2/texts/placeLesson/6.txt", 'r', encoding="utf-8")
     text = f.read()
     f.close()
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
