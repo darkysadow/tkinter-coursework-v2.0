@@ -2518,11 +2518,660 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        # windowLesson()
+        windowLesson()
 
     def preLesson():
         window.destroy()
         canvasLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def windowLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Вікна')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/windowLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Вікна', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Розміри та розташування вікна', font=('Trebuchet MS', 18, "bold"),
+          anchor=N).pack(pady=10)
+    f = open("texts/windowLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=8, text="""
+from tkinter import *
+
+root = Tk()
+
+root.geometry('600x400+200+100')
+
+root.mainloop()
+                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    f = open("texts/windowLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=61, text="""
+from tkinter import *
+
+root = Tk()
+
+# Присвоюємо змінній w ширину екрану 
+# (в моєму випадку 1600)
+w = root.winfo_screenwidth()
+
+# Присвоюємо змінній h висоту екрану
+# (в моєму випадку 900)
+h = root.winfo_screenheight()
+
+# Виконуємо цілочисельне ділення ширини екрану, 
+# тобто, шукаємо половину ширини = 800
+w = w//2
+
+# Виконуємо цілочисельне ділення висоти екрану, 
+# тобто, шукаємо половину висоти = 450
+h = h//2
+
+# Віднімаємо половину ширини вікна для того,
+# щоб воно розмістилось рівно в центрі
+w = w - 200
+
+# w = 800 - 200, w = 600
+
+# Віднімаємо половину висоти вікна для того,
+# щоб воно розмістилось рівно в центрі
+h = h - 200
+
+# h = 450 - 200, h = 250
+
+# Перші два значення в методі geometry(), які розділені 
+# літералом х приймають значення ширини та висоти вікна
+# "+" - означає додати відступ по ширині від верхнього 
+# лівого краю екрану(перше значення після плюса - зліва
+# друге - зверху)
+# Якщо "+" змінити на "-" відступ буде виконуватись з 
+# правого нижнього кутка екрану
+# Перше значення після "-" буде відступати справа, 
+# друге знизу
+# Відступаємо від верху 600 пікселів по ширині та 250 
+# по висоті методом .format()
+# Та використовуємо змінні, які проводили обчислення,
+# щоб не обчислювати вручну
+root.geometry('400x400+{}+{}'.format(w, h))
+
+Label(root, text="Ширина екрану: "
+            +str(root.winfo_screenwidth())).pack()
+Label(root, text="Висота екрану: "
+            +str(root.winfo_screenheight())).pack()
+Label(root, text="Половина ширини: "
+            +str(root.winfo_screenwidth()//2)).pack()
+Label(root, text="Половина висоти: "
+            +str(root.winfo_screenheight()//2)).pack()
+Label(root, text="Початок рисування вікна "
+            +"по осі Х: "+str(w)+"px").pack()
+Label(root, text="Початок рисування вікна "
+            +"по осі Y: "+str(h)+"px").pack()
+root.mainloop()
+                        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        app = Tk()
+
+        wid = app.winfo_screenwidth()  # Присвоюємо змінній w ширину екрану (в моєму випадку 1600)
+        hei = app.winfo_screenheight()  # Присвоюємо змінній h висоту екрану (в моєму випадку 900)
+        wid = wid // 2  # Виконуємо цілочисельне ділення ширини екрану, тобто, шукаємо половину ширини = 800
+        hei = hei // 2  # Виконуємо цілочисельне ділення висоти екрану, тобто, шукаємо половину висоти = 450
+        # Віднімаємо половину ширини вікна для того, щоб воно розмістилось рівно в центрі
+        wid = wid - 200  # w = 800 - 200, w = 600
+        # Віднімаємо половину висоти вікна для того, щоб воно розмістилось рівно в центрі
+        hei = hei - 200  # h = 450 - 200, h = 250
+
+        # Перші два значення в методі geometry(), які розділені літералом х приймають значення ширини та висоти вікна
+        # "+" - означає додати відступ по ширині від верхнього лівого краю екрану(перше значення після плюса - зліва
+        # друге - зверху)
+        # Якщо "+" змінити на "-" відступ буде виконуватись з правого нижнього кутка екрану
+        # Перше значення після "-" буде відступати справа, друге знизу
+        # Відступаємо від верху 600 пікселів по ширині та 250 по висоті методом .format()
+        # Та використовуємо змінні, які проводили обчислення, щоб не обчислювати вручну
+        app.geometry('400x400+{}+{}'.format(wid, hei))
+        Label(app, text="Ширина екрану: " + str(app.winfo_screenwidth())).pack()
+        Label(app, text="Висота екрану: " + str(app.winfo_screenheight())).pack()
+        Label(app, text="Половина ширини: " + str(app.winfo_screenwidth() // 2)).pack()
+        Label(app, text="Половина висоти: " + str(app.winfo_screenheight() // 2)).pack()
+        Label(app, text="Початок рисування вікна по осі Х: " + str(wid) + "px").pack()
+        Label(app, text="Початок рисування вікна по осі Y: " + str(hei) + "px").pack()
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/windowLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=89, text="""
+from tkinter import *
+
+root = Tk()
+
+Button(root, width=20, 
+        text="Just button").pack()
+Label(root, width=20, height=3, 
+        text='Just label').pack()
+Button(root, width=20, 
+        text="Just button").pack()
+
+# З самого початку програми в geometry() 
+# ширина та висота мають значення 1. Така 
+# особливість tkinter
+# Щоб оновити значення після розміщення 
+# елементів використовуємо метод 
+# update_idletasks()
+
+root.update_idletasks()
+
+# Присвоюємо змінній s значення висоти 
+# та ширини вікна
+
+s = root.geometry()
+
+# Щоб взяти лише висоту та ширину, без 
+# відступів збоку та зверху(знизу) використовуємо 
+# стандартний метод split() де агрументом виступає 
+# літерал, який розділяє ці данні, в данному 
+# випадку "+"
+
+s = s.split("+")
+
+# Створюємо список та присвоюємо до нульововго 
+# індексу ширину вікна використовуючи split.
+# До індексу [1] буде присвоєне наступне значення 
+# з geometry. Запис в список припиниться,
+# тоді, коли ми достигнемо розділювача "+", про 
+# який ми записали вище, так як geometry() складається
+# з geometry
+# ("ШИРИНАхВИСОТА+ВІДСТУП СПРАВА+ВІДСТУП ЗВЕРХУ"), 
+# список буде складатись з двох елементів.
+# У s[0] буде записане число-ширина вікна, у s[1] 
+# число-висота вікна
+
+s = s[0].split('x')
+
+# Присвоємо змінній window_width ширину вікна з 
+# списку s[]
+
+window_width = int(s[0])
+
+# А window_height - висоту вікна
+window_height = int(s[1])
+
+# Отримуємо ширину екрану
+w = root.winfo_screenwidth()
+
+# Отримуємо висоту екрану
+h = root.winfo_screenheight()
+
+# Ділимо націло ширину екрану на 2, щоб 
+# розташувати вікно рівно по центру
+w = w//2
+
+# Таку ж операцію проводимо з висотою
+h = h//2 
+
+# Тепер, нам потрібно вирахувати точку відступу збоку,
+# щоб вікно було рівно по центру відносно ширини.
+# Для цього від половини ширини екрану віднімаємо 
+# половину ширини вікна, інакше вікно
+# буде розміщене дальше на відстань рівну половині своєї
+# ширини. По суті, воно розмістить свій лівий
+# верхній край там, де мав би бути центр
+
+w = w - window_width//2
+
+# Також вираховуємо точку відступу зверху,
+h = h - window_height//2
+
+# Далі впроваджуємо ці відступи до методу geometry(), 
+# розміри вікна не вказуємо, так як вони вказані
+# програмно вище.
+
+root.geometry('+{}+{}'.format(w, h))
+
+root.mainloop()
+                            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        app = Tk()
+
+        Button(app, width=20, text="Just button").pack()
+        Label(app, width=20, height=3, text='Just label').pack()
+        Button(app, width=20, text="Just button").pack()
+
+        app.update_idletasks()
+        s = app.geometry()
+        s = s.split("+")
+        s = s[0].split('x')
+        window_width = int(s[0])
+        window_height = int(s[1])
+
+        wid = app.winfo_screenwidth()
+        hei = app.winfo_screenheight()
+        wid = wid // 2
+        hei = hei // 2
+        wid = wid - window_width // 2
+        hei = hei - window_height // 2
+
+        app.geometry('+{}+{}'.format(wid, hei))
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/windowLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=5, text="""
+...
+root.resizable(False, False)
+...
+                                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/window/1.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text='Заголовок вікна', font=('Trebuchet MS', 18, "bold"),
+          anchor=N).pack(pady=10)
+    f = open("texts/windowLesson/6.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=5, text="""
+    ...
+    root.title("Головне вікно")
+    ...
+                                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/window/2.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/windowLesson/7.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=51, text="""
+from tkinter import *
+
+root = Tk()
+root.resizable(False, False)
+# Розміщуємо головне вікно по центру
+w = root.winfo_screenwidth()
+h = root.winfo_screenheight()
+w = w//2
+h = h//2
+w = w - 125
+h = h - 100
+root.geometry("250x200+{}+{}".format(w, h))
+
+
+# Вікно, яке викликається кнопкою but
+def more():
+    # Створюємо другорядне вікно
+    a = Toplevel()
+
+    # Розміщуємо його на одному рівні з головним 
+    # вікном, але правіше, на 20px
+    ww = root.winfo_screenwidth()
+    wh = root.winfo_screenheight()
+    ww = ww//2
+    wh = wh//2
+    s = root.geometry()
+    s = s.split('+')
+    s = s[0].split('x')
+    width_a = int(s[0])
+    height_a = int(s[1])
+    ww = ww + width_a//2 + 20
+    wh = wh - height_a//2
+    a.geometry('250x200+{}+{}'.format(ww, wh))
+
+    # Відключаємо кнопки, та титулку на "Брові" вікна
+    a.overrideredirect(True)
+    Label(a, text="Функція, яка створює додаткове вікно\ n,"
+    +" що синтезується поверх \ n головного вікна ""програми",
+          justify=CENTER).pack(expand=1)
+
+    # Знищуємо дане вікно через 6 секунд
+    a.after(6000, lambda: a.destroy()) 
+
+
+lab1 = Label(width=20, height=5, 
+    text="функція TopLevel()").pack()
+but = Button(text="Детальніше", 
+    command=more).pack(pady=5)
+
+
+root.mainloop()
+        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        app = Tk()
+        app.resizable(False, False)
+        wid = app.winfo_screenwidth()
+        hei = app.winfo_screenheight()
+        wid = wid // 2
+        hei = hei // 2
+        wid = wid - 125
+        hei = hei - 100
+        app.geometry("250x200+{}+{}".format(wid, hei))
+
+        def more():
+            a = Toplevel()
+
+            ww = app.winfo_screenwidth()
+            wh = app.winfo_screenheight()
+            ww = ww // 2
+            wh = wh // 2
+            s = app.geometry()
+            s = s.split('+')
+            s = s[0].split('x')
+            width_a = int(s[0])
+            height_a = int(s[1])
+            ww = ww + width_a // 2 + 20
+            wh = wh - height_a // 2
+            a.geometry('250x200+{}+{}'.format(ww, wh))
+
+            a.overrideredirect(True)
+            Label(a, text="Функція, яка створює додаткове вікно\n, що синтезується поверх \nголовного вікна ""програми",
+                  justify=CENTER).pack(expand=1)
+            a.after(6000, lambda: a.destroy())  # Знищуємо дане вікно через 6 секунд
+
+        Label(app, width=20, height=5, text="функція TopLevel()").pack()
+        Button(app, text="Детальніше", command=more).pack(pady=5)
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити приклад", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/windowLesson/8.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+
+    def example():
+        app = Tk()
+
+        app.title("Прямокутник і Овал")
+
+        wid = app.winfo_screenwidth()
+        hei = app.winfo_screenheight()
+        wid = wid // 2
+        hei = hei // 2
+        mw = wid - 200
+        mh = hei - 225
+
+        app.geometry('400x450+{}+{}'.format(mw, mh))
+
+        def addItem():
+            controlPanel = Toplevel(app)
+            controlPanel.title('Фігура')
+            cpw = mw + 410
+            cph = mh
+            controlPanel.geometry("180x180+{}+{}".format(cpw, cph))
+            frame1 = Frame(controlPanel)
+            frame2 = Frame(controlPanel)
+            labx1 = Label(frame1, text="x1")
+            entx1 = Entry(frame1, width=3)
+            laby1 = Label(frame1, text="y1")
+            enty1 = Entry(frame1, width=3)
+            labx2 = Label(frame2, text="x2")
+            entx2 = Entry(frame2, width=3)
+            laby2 = Label(frame2, text="y1")
+            enty2 = Entry(frame2, width=3)
+            r_var = IntVar(controlPanel)
+            r_var.set(0)
+
+            r1 = Radiobutton(controlPanel, text="Прямокутник", variable=r_var, value=0)
+            r2 = Radiobutton(controlPanel, text="Овал", variable=r_var, value=1)
+
+            frame1.pack(padx=20, pady=10)
+            frame2.pack(padx=20, pady=10)
+            labx1.pack(side=LEFT)
+            entx1.pack(side=LEFT)
+            laby1.pack(side=LEFT)
+            enty1.pack(side=LEFT)
+            labx2.pack(side=LEFT)
+            entx2.pack(side=LEFT)
+            laby2.pack(side=LEFT)
+            enty2.pack(side=LEFT)
+            r1.pack()
+            r2.pack()
+
+            def draw():
+                x1 = entx1.get()
+                x2 = entx2.get()
+                y1 = enty1.get()
+                y2 = enty2.get()
+                if r_var.get() == 0:
+                    canvas.create_rectangle(x1, y1, x2, y2)
+                elif r_var.get() == 1:
+                    canvas.create_oval(x1, y1, x2, y2)
+                controlPanel.destroy()
+
+            button = Button(controlPanel, text="Нарисувати фігуру", command=draw)
+            button.pack()
+
+        canvas = Canvas(app, width=400, height=400)
+        canvas.pack()
+        Button(app, text="Додати фігуру", command=addItem).pack()
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+
+    def nextLesson():
+        window.destroy()
+        #gridLesson()
+
+    def preLesson():
+        window.destroy()
+        idtagLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def gridLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x820+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('метод grid()')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/gridLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Метод grid()', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/grid/1.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/gridLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/grid/3.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/gridLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/grid/5.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    Label(win, text="Тепер напишемо код: ", font=('Trebuchet MS', 12), justify=LEFT).pack(pady=10)
+    Label(win, height=30, text="""
+from tkinter import *
+
+root = Tk()
+
+# Перший рядок
+Label(root, text="Ім'я").grid(row=0, 
+                            column=0)
+Entry(root, width=38).grid(row=0, column=1,
+                            columnspan=3)
+
+# Другий рядок
+Label(root, text="Стовпців: ").grid(row=1,
+                                column=0)
+Spinbox(root, from_=1, to=50, 
+            width=10).grid(row=1, column=1)
+Label(root, text="Рядків: "
+                    ).grid(row=1, column=2)
+Spinbox(root, from_=1, to=50, 
+            width=10).grid(row=1, column=3)
+
+# Третій рядок
+Button(root, text="Довідка").grid(row=2,
+                                    column=0)
+Button(root, text="Вставити").grid(row=2,
+                                    column=2)
+Button(root, text="Відміна").grid(row=2,
+                                    column=3)
+
+root.mainloop()
+        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    f = open("texts/gridLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/grid/2.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/gridLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=32, text="""
+from tkinter import *
+
+root = Tk()
+
+# Перший рядок
+# Атрибут sticky "прибиває" елемент відносно 
+# сторони компаса, до сторони комірки
+
+Label(root, text="Ім'я:").grid(row=0, column=0, 
+                padx=10, pady=10, sticky=W)
+Entry(root, width=38).grid(row=0, column=1, 
+                columnspan=3, padx=10, pady=10)
+
+# Другий рядок
+Label(root, text="Стовпців: ").grid(row=1, 
+            column=0, padx=10, pady=10, sticky=W)
+Spinbox(root, from_=1, to=50, width=10).grid(row=1,
+            column=1, padx=10, pady=10)
+Label(root, text="Рядків: ").grid(row=1, column=2,
+            padx=10, pady=10)
+Spinbox(root, from_=1, to=50, width=10).grid(row=1,
+            column=3, padx=10, pady=10)
+
+# Третій рядок
+Button(root, text="Довідка").grid(row=2, column=0,
+            padx=10, pady=10, sticky=W)
+Button(root, text="Вставити").grid(row=2, column=2)
+Button(root, text="Відміна").grid(row=2, column=3,
+            padx=10, pady=10, sticky=E)
+
+root.mainloop()
+            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    image = ImageTk.PhotoImage(file="images/grid/3.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+    f = open("texts/gridLesson/6.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    Label(win, text="Перепрограмуйте друге вікно з практичної роботи минулої теми, \n"
+                    +"з використанням .grid() замість .pack()", font=('Trebuchet MS', 12), justify=LEFT).pack()
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/grid/4.gif")
+    labelImage = Label(win, image=image)
+    labelImage.image = image
+    labelImage.pack(pady=10)
+    del image, labelImage
+
+    def nextLesson():
+        window.destroy()
+        #messageBoxLesson()
+
+    def preLesson():
+        window.destroy()
+        windowLesson()
 
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
@@ -2582,11 +3231,11 @@ button10 = Button(frame, width=300, height=30, text=" Canvas. Ідентифік
 button10.pack(padx=140)
 
 button11 = Button(frame, width=300, height=30, text=" Вікна", compound='left', image=buttonImage, anchor=W,
-                  font=butFont)
+                  font=butFont, command=windowLesson)
 button11.pack(padx=140, pady=10)
 
 button12 = Button(frame, width=300, height=30, text=" метод grid()", compound='left', image=buttonImage,
-                  anchor=W, font=butFont)
+                  anchor=W, font=butFont, command=gridLesson)
 button12.pack(padx=140)
 
 button13 = Button(frame, width=300, height=30, text=" Діалогові вікна", compound='left', image=buttonImage,
