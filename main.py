@@ -1496,11 +1496,192 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        #bindLesson()
+        bindLesson()
 
     def preLesson():
         window.destroy()
         racheLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def bindLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('bind()')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/bindLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='метод bind()', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=15, text="""
+from tkinter import *
+root = Tk()
+
+def change(event):
+    b['fg'] = "red"
+    b['activeforeground'] = "red"
+
+b = Button(text='RED', width=10, height=3)
+b.bind('<Button-1>', change)
+b.bind('<Return>', change)
+
+b.pack()
+
+root.mainloop()
+                                        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    f = open("texts/bindLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=16, text="""
+from tkinter import *
+root = Tk()
+
+class RedButton:
+    def __init__(self):
+        self.b = Button(text='RED',
+                            width=10, height=3)
+        self.b.bind('<Button-1>', self.change)
+        self.b.pack()
+    def change(self, event):
+        self.b['fg'] = "red"
+        self.b['activeforeground'] = "red"
+
+RedButton()
+root.mainloop()
+                                            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    f = open("texts/bindLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=16, text="""
+from tkinter import *
+root = Tk()
+
+def font1(event):
+    l['font'] = "Verdana"
+def font2(event):
+    l['font'] = "Times"
+
+l = Label(text="Hello World")
+
+l.bind('<Button-1>', font1) # ЛКМ
+l.bind('<Button-3>', font2) # ПКМ
+l.pack()
+
+root.mainloop()
+                                                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    f = open("texts/bindLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=6, text="""
+… 
+def changeFont(event, font):
+    l['font'] = font
+… 
+                                                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    f = open("texts/bindLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=7, text="""
+… 
+l.bind('<Button-1>', lambda event,
+            f="Verdana": changeFont(event, f))
+l.bind('<Button-3>', lambda event,
+            f="Times": changeFont(event, f))
+… 
+                                                        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    f = open("texts/bindLesson/6.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=15, text="""
+from tkinter import *
+root = Tk()
+
+def changeFont(font):
+    l['font'] = font
+
+l = Label(text="Hello World")
+l.pack()
+Button(command=lambda f="Verdana": 
+                changeFont(f)).pack()
+Button(command=lambda f="Times": 
+                changeFont(f)).pack()
+
+root.mainloop()
+                                                            """, bg="black", bd=3, relief=GROOVE, fg="green",
+          justify=LEFT,
+          font=codeFont).pack()
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/bindLesson/7.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+
+    def example():
+        def enter_change(event):
+            listbox.insert(0, entry.get())
+            entry.delete(0, END)
+
+        def double_change(event):
+            select = list(listbox.curselection())  # Створюємо кортеж індексів listbox
+            select.reverse()  # Реверсуємо його
+            for i in select:
+                entry.insert(END, listbox.get(i) + " ")
+
+        app = Tk()
+
+        entry = Entry(app, width=25)
+        entry.bind('<Return>', enter_change)
+        entry.pack(pady=10)
+        listbox = Listbox(app, width=25, height=10, selectmode=EXTENDED)
+        listbox.bind('<Double-Button-1>', double_change)
+        listbox.pack()
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+
+    def nextLesson():
+        window.destroy()
+        # eventLesson()
+
+    def preLesson():
+        window.destroy()
+        listboxLesson()
 
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
@@ -1544,7 +1725,7 @@ button6 = Button(frame, width=300, height=30, text=" віджет Listbox()", co
 button6.pack(padx=140)
 
 button7 = Button(frame, width=300, height=30, text=" метод bind()", compound='left', image=buttonImage,
-                 anchor=W, font=butFont)
+                 anchor=W, font=butFont, command=bindLesson)
 button7.pack(padx=140, pady=10)
 
 button8 = Button(frame, width=300, height=30, text=" Події", compound='left', image=buttonImage, anchor=W
