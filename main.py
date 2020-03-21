@@ -2196,11 +2196,333 @@ canvas.create_text(300, 380, text="Правий куток знизу",
 
     def nextLesson():
         window.destroy()
-        # idtagLesson()
+        idtagLesson()
 
     def preLesson():
         window.destroy()
         eventLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def idtagLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Canvas. Анімація. Ідентифікатори і теги')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/idtagLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Canvas. Ідентифікатори і теги. Анімація.', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Ідентифікатори', font=('Trebuchet MS', 18, "bold"),
+          anchor=N).pack(pady=10)
+    f = open("texts/idtagLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=20, text="""
+from tkinter import *
+
+root = Tk()
+
+c = Canvas(root, width=500, height=500)
+c.focus_set()
+c.pack()
+
+ball = c.create_oval(200, 200, 300, 300, 
+    fill="#F43F23", outline="#AD2009", width=3)
+
+# Main moves
+c.bind('<Up>', lambda event: c.move(ball, 0, -5))
+c.bind('<Down>', lambda event: c.move(ball, 0, 5))
+c.bind('<Left>', lambda event: c.move(ball, -5, 0))
+c.bind('<Right>', lambda event: c.move(ball, 5, 0))
+
+
+root.mainloop()
+                                 """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        app = Tk()
+        c = Canvas(app, width=500, height=500)
+        c.focus_set()
+        c.pack()
+
+        ball = c.create_oval(200, 200, 300, 300,
+                             fill="#F43F23", outline="#AD2009", width=3)
+
+        # Main moves
+        c.bind('<Up>', lambda event: c.move(ball, 0, -5))
+        c.bind('<Down>', lambda event: c.move(ball, 0, 5))
+        c.bind('<Left>', lambda event: c.move(ball, -5, 0))
+        c.bind('<Right>', lambda event: c.move(ball, 5, 0))
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/idtagLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=30, text="""
+from tkinter import *
+
+
+def inFocus(event):
+    c.itemconfig(rect, fill="#95E874")
+    c.coords(rect, 8, 8, 392, 392)
+
+
+def outFocus(event):
+    c.itemconfig(rect, fill="#69A452")
+    c.coords(rect, 10, 10, 390, 390)
+
+
+root = Tk()
+
+c = Canvas(root, width=400, height=400, 
+                            bg="white")
+
+rect = c.create_rectangle(10, 10, 390, 390, 
+                            fill="#69A452")
+c.bind('<FocusIn>', inFocus)
+c.bind('<FocusOut>', outFocus)
+
+c.pack()
+
+b = Button(root, text="Some Button")
+b.pack()
+
+root.mainloop()
+    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+
+        def inFocus(event):
+            c.itemconfig(rect, fill="#95E874")
+            c.coords(rect, 8, 8, 392, 392)
+
+        def outFocus(event):
+            c.itemconfig(rect, fill="#69A452")
+            c.coords(rect, 10, 10, 390, 390)
+
+        app = Tk()
+
+        c = Canvas(app, width=400, height=400,
+                   bg="white")
+
+        rect = c.create_rectangle(10, 10, 390, 390,
+                                  fill="#69A452")
+        c.bind('<FocusIn>', inFocus)
+        c.bind('<FocusOut>', outFocus)
+
+        c.pack()
+
+        b = Button(app, text="Some Button")
+        b.pack()
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    Label(win, text="Тут при отриманні полотном фокуса (натиснути Tab) зміниться колір \nі розмір квадрата.",
+          font=('Trebuchet MS', 12), justify=LEFT).pack()
+    Label(win, text='Теги', font=('Trebuchet MS', 18, "bold"),
+          anchor=N).pack(pady=10)
+    f = open("texts/idtagLesson/4.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=16, text="""
+...
+c = Canvas(root, width=400, height=400)
+
+c.create_line(10, 40, 390, 40, width=4, 
+    fill="red", dash=(1, 1), tag="group1")
+c.create_oval(10, 90, 390, 360, 
+    fill="lightgreen", tag="group1")
+
+c.bind("<Button-1>", lambda event: 
+    c.itemconfig('group1', fill='lightblue'))
+c.bind("<Button-3>", lambda event: 
+    c.itemconfig('group1', fill='lightgreen'))
+
+c.pack()
+...
+        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    f = open("texts/idtagLesson/5.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=42, text="""
+from tkinter import *
+
+root = Tk()
+
+canvas = Canvas(root, width=470, height=160)
+oval = canvas.create_oval(30, 30, 130, 130, 
+                        fill="lightgreen")
+canvas.create_polygon((180, 130), (230, 30), 
+                (280, 130), fill="lightblue", 
+            outline="black", tag='triangle')
+canvas.create_rectangle(320, 30, 420, 130, 
+                fill="pink", tag='rectangle')
+
+
+def onOval(event):
+    canvas.delete(oval)
+    canvas.create_text(80, 80, text='Круг', 
+        font=('Comic Sans MS', 20, "bold"))
+
+
+def onTriangle(event):
+    canvas.delete('triangle')
+    canvas.create_text(225, 80, text='Трикутник', 
+            font=('Comic Sans MS', 20, "bold"))
+
+
+def onRectangle(event):
+    canvas.delete('rectangle')
+    canvas.create_text(380, 80, text='Квадрат',
+            font=('Comic Sans MS', 20, "bold"))
+
+
+canvas.tag_bind(oval, '<Button-1>', onOval)
+canvas.tag_bind('triangle', '<Button-1>', 
+                                onTriangle)
+canvas.tag_bind('rectangle', '<Button-1>',
+                                onRectangle)
+
+canvas.pack()
+
+root.mainloop()
+            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        app = Tk()
+
+        canvas = Canvas(app, width=470, height=160)
+        oval = canvas.create_oval(30, 30, 130, 130, fill="lightgreen")
+        canvas.create_polygon((180, 130), (230, 30), (280, 130), fill="lightblue", outline="black", tag='triangle')
+        canvas.create_rectangle(320, 30, 420, 130, fill="pink", tag='rectangle')
+
+        def onOval(event):
+            canvas.delete(oval)
+            canvas.create_text(80, 80, text='Круг', font=('Comic Sans MS', 20, "bold"))
+
+        def onTriangle(event):
+            canvas.delete('triangle')
+            canvas.create_text(225, 80, text='Трикутник', font=('Comic Sans MS', 20, "bold"))
+
+        def onRectangle(event):
+            canvas.delete('rectangle')
+            canvas.create_text(380, 80, text='Квадрат', font=('Comic Sans MS', 20, "bold"))
+
+        canvas.tag_bind(oval, '<Button-1>', onOval)
+        canvas.tag_bind('triangle', '<Button-1>', onTriangle)
+        canvas.tag_bind('rectangle', '<Button-1>', onRectangle)
+
+        canvas.pack()
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити цей код", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/idtagLesson/6.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    Label(win, height=17, text="""
+from tkinter import *
+
+root = Tk()
+c = Canvas(root, width=300, height=200, bg="white")
+c.pack()
+
+ball = c.create_oval(0, 100, 40, 140, fill='green')
+
+def motion():
+    c.move(ball, 1, 0)
+    if c.coords(ball)[2] < 300:
+        root.after(10, motion)
+
+motion()
+
+root.mainloop()
+                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    f = open("texts/idtagLesson/7.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+
+    def example():
+        app = Tk()
+        c = Canvas(app, width=300, height=200, bg="white")
+        c.pack()
+
+        ball = c.create_oval(100, 100, 120, 120, fill='green')
+
+        def mouseClick(event):
+            x = event.x
+            y = event.y
+            motion(x, y)
+
+        def motion(x, y):
+            if (c.coords(ball)[2] + c.coords(ball)[0]) / 2 < x:
+                c.move(ball, 1, 0)
+                root.after(10, motion, x, y)
+            if (c.coords(ball)[3] + c.coords(ball)[1]) / 2 < y:
+                c.move(ball, 0, 1)
+                root.after(10, motion, x, y)
+            if (c.coords(ball)[2] + c.coords(ball)[0]) / 2 > x:
+                c.move(ball, -1, 0)
+                root.after(10, motion, x, y)
+            if (c.coords(ball)[3] + c.coords(ball)[1]) / 2 > y:
+                c.move(ball, 0, -1)
+                root.after(10, motion, x, y)
+
+        c.bind('<Button-1>', mouseClick)
+
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+
+    def nextLesson():
+        window.destroy()
+        # windowLesson()
+
+    def preLesson():
+        window.destroy()
+        canvasLesson()
 
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
@@ -2256,7 +2578,7 @@ button9 = Button(frame, width=300, height=30, text=" Canvas", compound='left', i
 button9.pack(padx=140, pady=10)
 
 button10 = Button(frame, width=300, height=30, text=" Canvas. Ідентифікатори та теги",
-                  compound='left', image=buttonImage, anchor=W, font=butFont)
+                  compound='left', image=buttonImage, anchor=W, font=butFont, command=idtagLesson)
 button10.pack(padx=140)
 
 button11 = Button(frame, width=300, height=30, text=" Вікна", compound='left', image=buttonImage, anchor=W,
