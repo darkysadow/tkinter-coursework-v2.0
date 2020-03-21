@@ -1,0 +1,21 @@
+
+Пакет tkinter містить кілька модулів, що надають доступ до вже готових
+ діалогових вікон. Це вікна різних повідомлень, вибору за принципом 
+"так-ні", відкриття і збереження файлів і ін. В цьому уроці розглянемо 
+приклади вікон з модулів messagebox і filedialog пакета tkinter.
+
+Модулі пакету необхідно імпортувати окремо. Тобто ви імпортуєте вміст 
+tkinter (наприклад, from tkinter import *) і окремо що входить до складу 
+пакету tkinter модуль. Способи імпорту на прикладі messagebox і приклад
+виклику однієї з функцій модуля:
+
+	import tkinter.messagebox → tkinter.messagebox.askyesno ()
+
+	from tkinter.messagebox import * → askyesno ()
+
+	from tkinter import messagebox → messagebox.askyesno ()
+
+	from tkinter import messagebox as mb 
+	(замість mb може бути будь-який ідентифікатор) → mb.askyesno ()
+
+В уроці ми будемо використовувати останній варіант.
