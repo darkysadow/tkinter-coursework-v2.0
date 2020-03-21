@@ -1312,7 +1312,7 @@ root.mainloop()
 
     def nextLesson():
         window.destroy()
-        # listboxLesson()
+        listboxLesson()
 
     def preLesson():
         window.destroy()
@@ -1322,6 +1322,190 @@ root.mainloop()
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
     Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
     frame.pack()
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def listboxLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Listbox()')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/listboxLesson/1.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+
+    Label(win, text='Віджет Listbox()', font=('Trebuchet MS', 22, "bold"),
+          anchor=N).pack(pady=20)
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=23, text="""
+from tkinter import *
+
+root = Tk()
+
+# Створюємо віджет Listbox та надаємо йому розміри
+lbox = Listbox(width=25, height=10)
+lbox.pack(side=LEFT)
+
+# Створюємо скроллер для Listbox
+scroll = Scrollbar(command=lbox.yview)
+scroll.pack(fill=Y, side=LEFT)
+
+lbox.config(yscrollcommand=scroll.set)
+
+# Заповнюємо Listbox елементами від 0 до 25
+for i in range(0, 26):
+    lbox.insert(END, i)  
+    # END виступає індексом списку, в який 
+    # ми вставляємо елемент
+    # якщо поставимо 0, все буде навпаки
+
+root.mainloop()
+                                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Результат програми: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image = ImageTk.PhotoImage(file="images/listbox/1.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    frame.pack()
+    del frame
+    f = open("texts/listboxLesson/2.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, height=54, text="""
+from tkinter import *
+
+
+def addElement():
+    # Додаємо елемент з поля в кінець списку
+    lbox.insert(END, entry.get())
+    entry.delete(0, END)
+
+
+# Видаляємо виділені елементи в списку
+def deleteElement():
+    select = list(lbox.curselection())
+    select.reverse()
+    for i in select:
+        lbox.delete(i)
+
+
+# берігаємо створений список у файл listprogram.txt
+def saveList():
+    f = open("listprogram.txt", "w", encoding="utf-8")
+    # Записуємо кожен елемент списку у 
+    # файл з нової строки
+    f.writelines("\ n".join(lbox.get(0, END))) 
+    f.close()
+
+root = Tk()
+
+# Створюємо віджет Listbox та надаємо йому розміри
+lbox = Listbox(width=25, height=10, 
+                selectmode=EXTENDED)
+lbox.pack(side=LEFT)
+
+# Створюємо скроллер для Listbox
+scroll = Scrollbar(command=lbox.yview)
+scroll.pack(fill=Y, side=LEFT)
+
+lbox.config(yscrollcommand=scroll.set)
+
+frame = Frame(width=20)
+frame.pack(side=LEFT, padx=10)
+entry = Entry(frame, width=20)
+entry.pack(anchor=N)
+addBut = Button(frame, text="Додати", 
+                    command=addElement)
+addBut.pack(fill=X)
+delBut = Button(frame, text="Видалити", 
+                    command=deleteElement)
+delBut.pack(fill=X)
+saveBut = Button(frame, text="Зберегти", 
+                    command=saveList)
+saveBut.pack(fill=X)
+
+root.mainloop()
+                                        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
+          font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Записуємо в текстове поле нове значення, \nта натискаємо кнопку "Додати"',
+          font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
+    image = ImageTk.PhotoImage(file="images/listbox/2.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    Label(frame, text='Виділяємо елементи, які бажаємо видалити, \nта натискаємо кнопку "Видалити"',
+          font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
+    image = ImageTk.PhotoImage(file="images/listbox/3.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    Label(frame, text='Маємо список, який бажаємо зберегти у файл \nта натискаємо кнопку "Зберегти"',
+          font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
+    image = ImageTk.PhotoImage(file="images/listbox/4.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    Label(frame, text='Для перевірки, відкриємо текстовий документ\nу який ми зберегли список:',
+          font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
+    image = ImageTk.PhotoImage(file="images/listbox/5.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    frame.pack()
+    del frame
+    f = open("texts/listboxLesson/3.txt", 'r', encoding="utf-8")
+    text = f.read()
+    f.close()
+    Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/listboxLesson/4.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    frame = Frame(win)
+    image = ImageTk.PhotoImage(file="images/listbox/Practice.gif")
+    labelImage = Label(frame, image=image)
+    labelImage.image = image
+    labelImage.pack()
+    del image, labelImage
+    frame.pack()
+    del frame
+
+    def nextLesson():
+        window.destroy()
+        #bindLesson()
+
+    def preLesson():
+        window.destroy()
+        racheLesson()
+
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack(pady=20)
     del frame
     win.pack(fill=BOTH, expand=True)
 
@@ -1356,7 +1540,7 @@ button5 = Button(frame, width=300, height=30, text=" Radiobutton, Checkbutton", 
 button5.pack(padx=140, pady=10)
 
 button6 = Button(frame, width=300, height=30, text=" віджет Listbox()", compound='left', image=buttonImage,
-                 anchor=W, font=butFont)
+                 anchor=W, font=butFont, command=listboxLesson)
 button6.pack(padx=140)
 
 button7 = Button(frame, width=300, height=30, text=" метод bind()", compound='left', image=buttonImage,
