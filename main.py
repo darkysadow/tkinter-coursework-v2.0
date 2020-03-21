@@ -778,11 +778,295 @@ label.pack(expand=1, anchor=SE)
     del example
     def nextLesson():
         window.destroy()
-        #textLesson()
+        textLesson()
 
     def preLesson():
         window.destroy()
         bleLesson()
+    frame = Frame(win)
+    Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
+    Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
+    frame.pack()
+    del frame
+    win.pack(fill=BOTH, expand=True)
+
+
+def textLesson():
+    global w, h, codeFont
+    window = Toplevel(root)
+    window.geometry("600x700+{}+{}".format(w, h))
+    window.resizable(False, False)
+    window.title('Віджет Text()')
+    window.iconbitmap('icon.ico')
+    window.grab_set()
+    window.focus_set()
+
+    mainframe = VerticalScrolledFrame(window, borderwidth=2, relief=SUNKEN)
+    win = mainframe
+
+    f = open("texts/textLesson/1.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+
+    Label(win, text='Text - Багатострокові текстові поля', font=('Trebuchet MS', 22, "bold"), anchor=N).pack(pady=20)
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=9, text="""
+from tkinter import *
+
+root = Tk()
+text = Text(width=20, height=50, wrap=WORD, 
+                bg="green", fg="white")
+text.pack()
+
+root.mainloop()
+
+                """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+        app = Tk()
+        text = Text(app, width=20, height=5, wrap=WORD,
+                    bg="green", fg="white")
+        text.pack()
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/textLesson/2.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, text='Text та Scrollbar', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/textLesson/3.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=12, text="""
+from tkinter import *
+
+root = Tk()
+text = Text(width=20, height=10, wrap=WORD)
+text.pack(side=LEFT)
+
+scroll = Scrollbar(command=text.yview)
+scroll.pack(side=LEFT, fill=Y)
+text.config(yscrollcommand=scroll.set)
+root.mainloop()
+                    """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Результат: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image1 = ImageTk.PhotoImage(file='images/text/1.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1
+    f = open("texts/textLesson/4.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, text='Методи Text', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/textLesson/5.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=42, text="""
+from tkinter import *
+
+
+def insertText():   
+    s = "Hello World!"
+    text.insert(1.0, s)
+
+
+def getText():  
+    s = text.get(1.0, END)
+    label['text'] = s
+
+
+def deleteText():  
+    text.delete(1.0, END)
+    label['text'] = ""
+
+
+root = Tk()
+root.title('Керування текстом')
+
+
+frame = Frame()
+
+text = Text(width=30, height=7)
+text.pack()
+label = Label(width=30, height=7, fg="grey")
+frame.pack()
+
+b_insert = Button(frame, width=8, height=3, 
+            text="Вставити", command=insertText)
+b_insert.pack(side=LEFT)
+b_get = Button(frame, width=8, height=3, 
+            text="Отримати", command=getText)
+b_get.pack(side=LEFT)
+b_delete = Button(frame, width=8, height=3, 
+            text="Видалити", command=deleteText)
+b_delete.pack(side=LEFT)
+
+label.pack()
+root.mainloop()
+                        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    def example():
+        def insertText():  # Функція котра буде вводити стрічку Hello World!
+            s = "Hello World!"
+            text.insert(1.0, s)
+
+        def getText():  # Функція котра буде отриувати текст користувача, та виводити його в мітку
+            s = text.get(1.0, END)
+            label['text'] = s
+
+        def deleteText():  # Функція яка буде видаляти текст з поля та мітки
+            text.delete(1.0, END)
+            label['text'] = ""
+        app = Tk()
+        frame = Frame(app)  # Рамка, в яку будуть зібрані кнопки
+
+        text = Text(app, width=30, height=7)
+        text.pack()
+        label = Label(app, width=30, height=7, fg="grey")
+        frame.pack()
+
+        # Далі описані кнопки, якими ми будемо керувати текстом в полі та мітці
+
+        b_insert = Button(frame, width=8, height=3, text="Вставити", command=insertText)
+        b_insert.pack(side=LEFT)
+        b_get = Button(frame, width=8, height=3, text="Отримати", command=getText)
+        b_get.pack(side=LEFT)
+        b_delete = Button(frame, width=8, height=3, text="Видалити", command=deleteText)
+        b_delete.pack(side=LEFT)
+
+        label.pack()
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/textLesson/6.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, text='Теги', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/textLesson/7.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=13, text="""
+from tkinter import *
+
+root = Tk()
+text = Text(width=30, height=10)
+text.insert(1.0, "Перша лінія\nДруга лінія")
+
+text.tag_add("firstLine", 1.0, "1.end")
+
+text.tag_config('firstLine', font=("Comic Sans MS", 
+                    18, "bold"), justify=CENTER)
+text.pack()
+root.mainloop()
+                        """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+    frame = Frame(win)
+    Label(frame, text='Без тегів: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image1 = ImageTk.PhotoImage(file='images/text/2.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1
+    frame = Frame(win)
+    Label(frame, text='З тегами: ',
+          font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
+    image1 = ImageTk.PhotoImage(file='images/text/3.gif')
+    labelImage1 = Label(frame, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    frame.pack()
+    del frame, image1, labelImage1
+    f = open("texts/textLesson/7.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, text='Вставка віджетів в текстове поле', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/textLesson/8.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, height=16, text="""
+from tkinter import *
+
+def smile():   
+    label = Label(fg="white", bg="black", text=":D")
+    text.window_create(INSERT, window=label)   
+
+root = Tk()
+
+text = Text(width=20, height=7, wrap=WORD)
+text.pack()
+button = Button(text=":D", command=smile)
+button.pack()
+
+root.mainloop()
+                            """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
+
+    def example():
+
+        def smile():  # Функція-команда для кнопки, яка буде вставляти в поле смайлик
+            label = Label(app, fg="white", bg="black", text=":D")
+            text.window_create(INSERT, window=label)  # INSERT - місце в яке вставляємо смайл, тобто там де курсор
+
+        app = Tk()
+
+        text = Text(app, width=20, height=7, wrap=WORD)
+        text.pack()
+
+        button = Button(app, text=":D", command=smile)
+        button.pack()
+        app.mainloop()
+
+    Button(win, width=300, height=30, text="Запустити зразок", compound="left", image=buttonImage,
+           font=butFont, command=example).pack(pady=20, padx=140)
+    del example
+    f = open("texts/textLesson/9.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    Label(win, text='Практична робота', font=('Trebuchet MS', 22, "bold")).pack(pady=10)
+    f = open("texts/textLesson/10.txt", 'r', encoding="utf-8")
+    text1 = f.read()
+    f.close()
+    Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
+    del text1
+    image1 = ImageTk.PhotoImage(file='images/text/4.gif')
+    labelImage1 = Label(win, image=image1)
+    labelImage1.image = image1
+    labelImage1.pack(side=TOP, pady=10)
+    del image1, labelImage1
+
+    def nextLesson():
+        window.destroy()
+        #racheLesson()
+
+    def preLesson():
+        window.destroy()
+        packLesson()
     frame = Frame(win)
     Button(frame, text=" < Попередня тема < ", command=preLesson).pack(side=LEFT, anchor=SW, pady=10, padx=10)
     Button(frame, text=" > Наступна тема > ", command=nextLesson).pack(side=LEFT, anchor=SE, pady=10, padx=10)
@@ -809,11 +1093,11 @@ button2 = Button(frame, width=300, height=30, text=" Button, Label, Entry", comp
 button2.pack(padx=140)
 
 button3 = Button(frame, width=300, height=30, text=" метод pack()", compound='left', image=buttonImage,
-                 anchor=W, font=butFont)
+                 anchor=W, font=butFont, command=packLesson)
 button3.pack(padx=140, pady=10)
 
 button4 = Button(frame, width=300, height=30, text=" Text - велике текстове поле",
-                 compound='left', image=buttonImage, anchor=W, font=butFont)
+                 compound='left', image=buttonImage, anchor=W, font=butFont, command=textLesson)
 button4.pack(padx=140)
 
 button5 = Button(frame, width=300, height=30, text=" Radiobutton, Checkbutton", compound='left', image=buttonImage,
