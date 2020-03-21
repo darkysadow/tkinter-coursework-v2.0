@@ -9,7 +9,7 @@ w = root.winfo_screenwidth()
 w = w//2
 h = 20
 root.geometry("600x700+{}+{}".format(w, h))
-root.iconbitmap("icon.ico")
+root.iconbitmap("C:/python-learn/tkinter-coursework-2/icon.ico")
 root.title('Самовчитель по tkinter')
 root.resizable(False, False)
 codeFont = ("Courier New", 12)
@@ -24,7 +24,7 @@ def whatistkinter():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Що таке tkinter?')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -96,7 +96,7 @@ def bleLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Button, Label, Entry')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -141,14 +141,14 @@ root.mainloop()
     Label(win, text=text3, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text3
     Label(win, text="До:", font=('Comic Sans MS', 14, 'bold'), fg="darkgrey", justify=CENTER).pack(pady=10)
-    image1 = ImageTk.PhotoImage(file='images/button/1.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/button/1.gif')
     labelImage1 = Label(win, image=image1)
     labelImage1.image = image1
     labelImage1.pack()
     del image1
     del labelImage1
     Label(win, text="Після:", font=('Comic Sans MS', 14, 'bold'), fg="darkgrey", justify=CENTER).pack(pady=10)
-    image2 = ImageTk.PhotoImage(file='images/button/2.gif')
+    image2 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/button/2.gif')
     labelImage2 = Label(win, image=image2)
     labelImage2.image = image2
     labelImage2.pack()
@@ -156,7 +156,7 @@ root.mainloop()
     del labelImage2
     Label(win, text="Кнопка затиснута:", font=('Comic Sans MS', 14, 'bold'), fg="darkgrey",
           justify=CENTER).pack(pady=10)
-    image3 = ImageTk.PhotoImage(file='images/button/3.gif')
+    image3 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/button/3.gif')
     labelImage3 = Label(win, image=image3)
     labelImage3.image = image3
     labelImage3.pack()
@@ -216,7 +216,7 @@ root.mainloop()
     """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
     Label(win, text=text2, font=('Trebuchet MS', 12), justify=LEFT).pack()
     Label(win, text="Результат:", font=('Comic Sans MS', 14, 'bold'), fg="darkgrey", justify=CENTER).pack(pady=10)
-    image1 = ImageTk.PhotoImage(file='images/label/1.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/label/1.gif')
     labelImage1 = Label(win, image=image1)
     labelImage1.image = image1
     labelImage1.pack()
@@ -242,7 +242,7 @@ root.mainloop()
         """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
     Label(win, text="Запуск програми:", font=('Comic Sans MS', 14, 'bold'), fg="darkgrey",
           justify=CENTER).pack(pady=10)
-    image1 = ImageTk.PhotoImage(file='images/label/2.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/label/2.gif')
     labelImage1 = Label(win, image=image1)
     labelImage1.image = image1
     labelImage1.pack()
@@ -250,7 +250,7 @@ root.mainloop()
     del labelImage1
     Label(win, text="Натиснули на кнопку:", font=('Comic Sans MS', 14, 'bold'), fg="darkgrey",
           justify=CENTER).pack(pady=10)
-    image1 = ImageTk.PhotoImage(file='images/label/3.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/label/3.gif')
     labelImage1 = Label(win, image=image1)
     labelImage1.image = image1
     labelImage1.pack()
@@ -317,7 +317,7 @@ root.mainloop()
     Label(win, text=text2, font=('Trebuchet MS', 12), justify=LEFT).pack()
     Label(win, text="Программа:", font=('Comic Sans MS', 14, 'bold'), fg="darkgrey",
           justify=CENTER).pack(pady=10)
-    image1 = ImageTk.PhotoImage(file='images/entry/1.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/entry/1.gif')
     labelImage1 = Label(win, image=image1)
     labelImage1.image = image1
     labelImage1.pack()
@@ -430,7 +430,7 @@ def packLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('метод pack()')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -454,7 +454,7 @@ l4 = Label(width=7, height=4, bg='lightblue', text="4")
             """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
     frame = Frame(win)
     Label(frame, text='l1.pack()\nl2.pack()\nl3.pack()\nl4.pack()', font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/1.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/1.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -463,7 +463,7 @@ l4 = Label(width=7, height=4, bg='lightblue', text="4")
     frame = Frame(win)
     Label(frame, text='l1.pack(side=BOTTOM)\nl2.pack(side=BOTTOM)\nl3.pack(side=BOTTOM)\nl4.pack(side=BOTTOM)',
           font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/2.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/2.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -472,7 +472,7 @@ l4 = Label(width=7, height=4, bg='lightblue', text="4")
     frame = Frame(win)
     Label(frame, text='l1.pack(side=LEFT)\nl2.pack(side=LEFT)\nl3.pack(side=LEFT)\nl4.pack(side=LEFT)',
           font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/3.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/3.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -481,7 +481,7 @@ l4 = Label(width=7, height=4, bg='lightblue', text="4")
     frame = Frame(win)
     Label(frame, text='l1.pack(side=RIGHT)\nl2.pack(side=RIGHT)\nl3.pack(side=RIGHT)\nl4.pack(side=RIGHT)',
           font=('Trebuchet MS', 18)).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/4.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/4.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -490,7 +490,7 @@ l4 = Label(width=7, height=4, bg='lightblue', text="4")
     frame = Frame(win)
     Label(frame, text='l1.pack(side=TOP)\nl2.pack(side=BOTTOM)\nl3.pack(side=RIGHT)\nl4.pack(side=LEFT)',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/5.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/5.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -530,7 +530,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='Результат: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/6.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/6.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -569,7 +569,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='Результат: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/7.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/7.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -583,7 +583,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='frame.pack(padx=10, pady=10)\nlabel1.pack(side=LEFT)\nlabel2.pack(side=LEFT)',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/8.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/8.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -592,7 +592,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='frame.pack(ipadx=10, ipady=10)\nlabel1.pack(side=LEFT)\nlabel2.pack(side=LEFT)',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/9.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/9.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -606,7 +606,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='frame.pack(side=LEFT, \n         padx=10, pady=10)\nlabel1.pack()\nlabel2.pack()',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=LEFT)
-    image1 = ImageTk.PhotoImage(file='images/pack/10.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/10.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=LEFT, pady=10)
@@ -637,7 +637,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='Результат: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image1 = ImageTk.PhotoImage(file='images/pack/11.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/11.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -656,7 +656,7 @@ label.pack(expand=1)
     frame = Frame(win)
     Label(frame, text='Результат: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image1 = ImageTk.PhotoImage(file='images/pack/12.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/12.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -675,7 +675,7 @@ label.pack(expand=1, fill=Y)
     frame = Frame(win)
     Label(frame, text='Результат: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image1 = ImageTk.PhotoImage(file='images/pack/13.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/13.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -695,7 +695,7 @@ label.pack(expand=1, anchor=SE)
     frame = Frame(win)
     Label(frame, text='Результат: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image1 = ImageTk.PhotoImage(file='images/pack/14.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/pack/14.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -797,7 +797,7 @@ def textLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Віджет Text()')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -859,7 +859,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='Результат: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image1 = ImageTk.PhotoImage(file='images/text/1.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/text/1.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -982,7 +982,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='Без тегів: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image1 = ImageTk.PhotoImage(file='images/text/2.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/text/2.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -991,7 +991,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='З тегами: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image1 = ImageTk.PhotoImage(file='images/text/3.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/text/3.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -1054,7 +1054,7 @@ root.mainloop()
     f.close()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
-    image1 = ImageTk.PhotoImage(file='images/text/4.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/text/4.gif')
     labelImage1 = Label(win, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -1082,7 +1082,7 @@ def racheLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Radiobutton, Checkbutton')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -1117,7 +1117,7 @@ r2.pack(anchor=W)
 root.mainloop()
                                 """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
     frame = Frame(win)
-    image1 = ImageTk.PhotoImage(file='images/radiobutton/1.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/radiobutton/1.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage1.pack(side=TOP, pady=10)
@@ -1249,9 +1249,9 @@ root.mainloop()
                                 """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT,
           font=codeFont).pack()
     frame = Frame(win)
-    image1 = ImageTk.PhotoImage(file='images/radiobutton/2.gif')
-    image2 = ImageTk.PhotoImage(file='images/radiobutton/3.gif')
-    image3 = ImageTk.PhotoImage(file='images/radiobutton/4.gif')
+    image1 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/radiobutton/2.gif')
+    image2 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/radiobutton/3.gif')
+    image3 = ImageTk.PhotoImage(file='C:/python-learn/tkinter-coursework-2/images/radiobutton/4.gif')
     labelImage1 = Label(frame, image=image1)
     labelImage1.image = image1
     labelImage2 = Label(frame, image=image2)
@@ -1332,7 +1332,7 @@ def listboxLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Listbox()')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -1375,7 +1375,7 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='Результат програми: ',
           font=('Trebuchet MS', 18), justify=LEFT).pack(pady=10, side=TOP)
-    image = ImageTk.PhotoImage(file="images/listbox/1.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/listbox/1.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
@@ -1446,28 +1446,28 @@ root.mainloop()
     frame = Frame(win)
     Label(frame, text='Записуємо в текстове поле нове значення, \nта натискаємо кнопку "Додати"',
           font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
-    image = ImageTk.PhotoImage(file="images/listbox/2.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/listbox/2.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
     del image, labelImage
     Label(frame, text='Виділяємо елементи, які бажаємо видалити, \nта натискаємо кнопку "Видалити"',
           font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
-    image = ImageTk.PhotoImage(file="images/listbox/3.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/listbox/3.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
     del image, labelImage
     Label(frame, text='Маємо список, який бажаємо зберегти у файл \nта натискаємо кнопку "Зберегти"',
           font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
-    image = ImageTk.PhotoImage(file="images/listbox/4.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/listbox/4.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
     del image, labelImage
     Label(frame, text='Для перевірки, відкриємо текстовий документ\nу який ми зберегли список:',
           font=('Trebuchet MS', 15), justify=LEFT).pack(pady=10, side=TOP)
-    image = ImageTk.PhotoImage(file="images/listbox/5.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/listbox/5.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
@@ -1486,7 +1486,7 @@ root.mainloop()
     Label(win, text=text1, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text1
     frame = Frame(win)
-    image = ImageTk.PhotoImage(file="images/listbox/Practice.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/listbox/Practice.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
@@ -1516,7 +1516,7 @@ def bindLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('bind()')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -1697,7 +1697,7 @@ def eventLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Події tkinter')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -1715,17 +1715,17 @@ def eventLesson():
     frame = Frame(win)
     Label(frame, text='Типи подій', font=('Trebuchet MS', 18, "bold"),
           anchor=N).pack(pady=20)
-    image = ImageTk.PhotoImage(file="images/event/2.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/event/2.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
     del image, labelImage
-    image = ImageTk.PhotoImage(file="images/event/3.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/event/3.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
     del image, labelImage
-    image = ImageTk.PhotoImage(file="images/event/4.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/event/4.gif")
     labelImage = Label(frame, image=image)
     labelImage.image = image
     labelImage.pack()
@@ -1733,7 +1733,7 @@ def eventLesson():
     frame.pack()
     Label(win, text='При виклику методу bind () подія передається через перший аргумент.',
           font=('Trebuchet MS', 12), justify=LEFT).pack()
-    image = ImageTk.PhotoImage(file="images/event/1.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/event/1.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack(pady=10)
@@ -1953,7 +1953,7 @@ def canvasLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Canvas')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -1968,7 +1968,7 @@ def canvasLesson():
           anchor=N).pack(pady=20)
     Label(win, text=text, font=('Trebuchet MS', 12), justify=LEFT).pack()
     del text
-    image = ImageTk.PhotoImage(file="images/canvas/1.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/canvas/1.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack()
@@ -2012,14 +2012,14 @@ canvas.create_line(397, 150, 397, 500, width=6,
 
 root.mainloop()
              """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    image = Image.open("images/canvas/3.gif")
+    image = Image.open("C:/python-learn/tkinter-coursework-2/images/canvas/3.gif")
     new_image = image.resize((540, 450))
     image = ImageTk.PhotoImage(new_image)
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage, new_image
-    image = ImageTk.PhotoImage(file="images/canvas/2.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/canvas/2.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack()
@@ -2053,7 +2053,7 @@ canvas.create_rectangle(100, 200, 500, 300,
 ...
                  """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
     frame = Frame(win)
-    image = Image.open("images/canvas/4.gif")
+    image = Image.open("C:/python-learn/tkinter-coursework-2/images/canvas/4.gif")
     new_image = image.resize((540, 450))
     image = ImageTk.PhotoImage(new_image)
     labelImage = Label(frame, image=image)
@@ -2061,7 +2061,7 @@ canvas.create_rectangle(100, 200, 500, 300,
     labelImage.pack(pady=10)
     del image, labelImage, new_image
     Label(frame, text='Курсор на прямокутнику:', font=('Trebuchet MS', 16), justify=LEFT).pack()
-    image = Image.open("images/canvas/5.gif")
+    image = Image.open("C:/python-learn/tkinter-coursework-2/images/canvas/5.gif")
     new_image = image.resize((540, 450))
     image = ImageTk.PhotoImage(new_image)
     labelImage = Label(frame, image=image)
@@ -2096,7 +2096,7 @@ canvas.create_polygon((250, 450), (350, 450),
 ...
                      """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
     Label(win, text='Результат виконання:', font=('Trebuchet MS', 16), justify=LEFT).pack(pady=10)
-    image = Image.open("images/canvas/6.gif")
+    image = Image.open("C:/python-learn/tkinter-coursework-2/images/canvas/6.gif")
     new_image = image.resize((540, 650))
     image = ImageTk.PhotoImage(new_image)
     labelImage = Label(win, image=image)
@@ -2135,12 +2135,12 @@ canvas.create_arc(50, 50, 350, 350, start=200,
                     fill="#E74C3C")
 ...
                          """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    image = ImageTk.PhotoImage(file="images/canvas/7.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/canvas/7.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack(pady=10)
     del image, labelImage
-    image = ImageTk.PhotoImage(file="images/canvas/9.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/canvas/9.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack(pady=10)
@@ -2158,7 +2158,7 @@ canvas.create_text(300, 380, text="Правий куток знизу",
                 justify=RIGHT, fill="aqua")
 ...
                              """, bg="black", bd=3, relief=GROOVE, fg="green", justify=LEFT, font=codeFont).pack()
-    image = ImageTk.PhotoImage(file="images/canvas/8.gif")
+    image = ImageTk.PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/canvas/8.gif")
     labelImage = Label(win, image=image)
     labelImage.image = image
     labelImage.pack(pady=10)
@@ -2216,7 +2216,7 @@ def idtagLesson():
     window.geometry("600x700+{}+{}".format(w, h))
     window.resizable(False, False)
     window.title('Canvas. Анімація. Ідентифікатори і теги')
-    window.iconbitmap('icon.ico')
+    window.iconbitmap('C:/python-learn/tkinter-coursework-2/icon.ico')
     window.grab_set()
     window.focus_set()
 
@@ -2533,7 +2533,7 @@ root.mainloop()
 
 
 # Setting default image and font for each button
-buttonImage = PhotoImage(file="images/buttonImage.gif")
+buttonImage = PhotoImage(file="C:/python-learn/tkinter-coursework-2/images/buttonImage.gif")
 butFont = ("Trebuchet MS", 12)
 
 lab1 = Label(frame, text="Tkinter. Програмування GUI на мові Python. Курс",
